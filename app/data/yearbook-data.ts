@@ -1,51 +1,39 @@
-import type { ClassData, BPHMember, SekbidData, EkskulData } from '~/types/yearbook'
+import type { ClassData, BPHMember, SekbidData, EkskulData, Student } from '~/types/yearbook'
 
-// Sample real student names for variety
-const sampleNames = [
-  'Adi Pratama', 'Sari Dewi', 'Budi Santoso', 'Maya Putri', 'Rizki Ramadhan',
-  'Indira Sari', 'Fajar Nugraha', 'Putri Ayu', 'Doni Setiawan', 'Rina Maharani',
-  'Ahmad Fauzi', 'Sinta Permata', 'Reza Wijaya', 'Diah Ayu', 'Yoga Pratama',
-  'Lestari Wulan', 'Bayu Kusuma', 'Fitri Handayani', 'Agus Setiawan', 'Nova Sari',
-  'Dedi Rahman', 'Wiwi Rahayu', 'Eko Prasetyo', 'Dewi Lestari', 'Patricia Clara',
-  'Raditya Pahlawadi', 'Toni Kurniawan', 'Ratna Sari', 'Joko Susanto', 'Lina Kartika',
-  'Bambang Wijaya', 'Eka Putri', 'Andi Permana', 'Sari Wulandari', 'Dika Pratama',
-  'Nina Safitri', 'Rio Firmansyah', 'Mega Sari', 'Irfan Hakim', 'Yuni Astuti'
-]
+const allStudents = import.meta.glob<{ default: Student[] }>('~/data/json/students/*.json', { eager: true })
 
-const sampleInstagram = [
-  'adiprtm_', 'saridewi23', 'budisntso', 'mayaputri_', 'rizkidrm',
-  'indira.sari', 'fajarngr', 'putri_ayu99', 'donisetiawan', 'rina_mhr',
-  'ahmadfauzi_', 'sintaprmta', 'rezawjy', 'diah.ayu', 'yogaprtm',
-  'lestariwln', 'bayuksm', 'fitrihndyn', 'agussetia', 'novasari_',
-  'dedi.rahman', 'wiwirhyu', 'eko_prstyo', 'dewilesri', 'hadigunwan',
-  'siskaamelia', 'tonikrnwn', 'ratnasari_', 'jokossnto', 'linakrtk',
-  'bambangwjy', 'ekaputri_', 'andiprmn', 'sariwlndr', 'dikaprtm',
-  'ninasftri', 'rio.frmnsyh', 'megasari99', 'irfanhkm', 'yuniastt'
-]
 
 // Generate diverse students for a class
 const generateStudents = (classCode: string, count: number = 36) => {
   const photoBaseByClass: Record<string, string> = {
-    RPL1: 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/RPL%201/',
-    RPL2: 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/RPL%202/',
-    PH1: 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/PH%201/',
-    PH2: 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/PH%202/',
-    PH3: 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/PH%203/'
+    'RPL 1': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/RPL%201/',
+    'RPL 2': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/RPL%202/',
+    'PH 1': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/PH%201/',
+    'PH 2': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/PH%202/',
+    'PH 3': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/PH%203/',
+    'TBG 1': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/TBG%201/',
+    'TBG 2': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/TBG%202/',
+    'TBG 3': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/TBG%203/',
+    'TBS 1': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/TBS%201/',
+    'TBS 2': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/TBS%202/',
+    'TBS 3': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/TBS%203/',
+    'ULW': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/ULW/'
   }
 
   const photoBase = photoBaseByClass[classCode] ?? ''
 
-  return Array.from({ length: count }, (_, i) => {
-    const nameIndex = (i + classCode.charCodeAt(0)) % sampleNames.length
-    const igIndex = (i + classCode.charCodeAt(0) + 1) % sampleInstagram.length
-
-    return {
-      name: sampleNames[nameIndex],
-      photo: photoBase ? `${photoBase}${i + 1}.JPG` : '',
-      instagram: sampleInstagram[igIndex],
-      tiktok: Math.random() > 0.7 ? sampleInstagram[igIndex].replace('_', '') : undefined // 30% have TikTok
-    }
+  const studentsData = computed(() => {
+    const path = `/data/json/students/${classCode.toUpperCase()}.json`
+    console.log(path)
+    return allStudents[path]?.default || [] as Student[]
   })
+
+  const studentsWithPhoto = studentsData.value?.map((student, index) => ({
+    ...student,
+    photo: photoBase ? `${photoBase}${index + 1}.JPG` : ''
+  }))
+
+  return studentsWithPhoto
 }
 
 // Sample class data with diverse students
@@ -70,7 +58,7 @@ export const classesData: ClassData[] = [
   {
     classCode: 'RPL 1',
     className: 'Rekayasa Perangkat Lunak 1',
-    students: generateStudents('RPL1', 36),
+    students: generateStudents('RPL 1', 36),
     teacher: {
       name: 'Agus Winarto, S.Kom., M.T.',
       photo: '',
@@ -87,7 +75,7 @@ export const classesData: ClassData[] = [
   {
     classCode: 'RPL 2',
     className: 'Rekayasa Perangkat Lunak 2',
-    students: generateStudents('RPL2', 36),
+    students: generateStudents('RPL 2', 36),
     teacher: {
       name: 'Bambang Setiadi, S.T., M.Kom.',
       photo: '',
@@ -104,7 +92,7 @@ export const classesData: ClassData[] = [
   {
     classCode: 'TBS 1',
     className: 'Tata Busana 1',
-    students: generateStudents('TBS1', 36),
+    students: generateStudents('TBS 1', 36),
     teacher: {
       name: 'Rina Susanti, S.Pd.',
       photo: '',
@@ -121,7 +109,7 @@ export const classesData: ClassData[] = [
   {
     classCode: 'TBS 2',
     className: 'Tata Busana 2',
-    students: generateStudents('TBS2', 36),
+    students: generateStudents('TBS 2', 36),
     teacher: {
       name: 'Dewi Kartika, S.Pd.',
       photo: '',
@@ -138,7 +126,7 @@ export const classesData: ClassData[] = [
   {
     classCode: 'TBS 3',
     className: 'Tata Busana 3',
-    students: generateStudents('TBS3', 36),
+    students: generateStudents('TBS 3', 36),
     teacher: {
       name: 'Maya Sari, S.Pd., M.Ds.',
       photo: '',
@@ -153,9 +141,9 @@ export const classesData: ClassData[] = [
     retroPhotos: ['', '', '']
   },
   {
-    classCode: 'Boga 1',
+    classCode: 'TBG 1',
     className: 'Tata Boga 1',
-    students: generateStudents('Boga1', 36),
+    students: generateStudents('TBG 1', 36),
     teacher: {
       name: 'Chef Indra Kusuma, S.Par.',
       photo: '',
@@ -170,9 +158,9 @@ export const classesData: ClassData[] = [
     retroPhotos: ['', '', '']
   },
   {
-    classCode: 'Boga 2',
+    classCode: 'TBG 2',
     className: 'Tata Boga 2',
-    students: generateStudents('Boga2', 36),
+    students: generateStudents('TBG 2', 36),
     teacher: {
       name: 'Chef Ratna Dewi, S.Par., M.M.',
       photo: '',
@@ -187,9 +175,9 @@ export const classesData: ClassData[] = [
     retroPhotos: ['', '', '']
   },
   {
-    classCode: 'Boga 3',
+    classCode: 'TBG 3',
     className: 'Tata Boga 3',
-    students: generateStudents('Boga3', 36),
+    students: generateStudents('TBG 3', 36),
     teacher: {
       name: 'Chef Budi Hartono, S.Par.',
       photo: '',
@@ -206,7 +194,7 @@ export const classesData: ClassData[] = [
   {
     classCode: 'PH 1',
     className: 'Perhotelan 1',
-    students: generateStudents('PH1', 36),
+    students: generateStudents('PH 1', 36),
     teacher: {
       name: 'Drs. Surya Wijaya, M.Par.',
       photo: '',
@@ -223,7 +211,7 @@ export const classesData: ClassData[] = [
   {
     classCode: 'PH 2',
     className: 'Perhotelan 2',
-    students: generateStudents('PH2', 36),
+    students: generateStudents('PH 2', 36),
     teacher: {
       name: 'Lila Sari, S.Par., M.M.',
       photo: '',
@@ -240,7 +228,7 @@ export const classesData: ClassData[] = [
   {
     classCode: 'PH 3',
     className: 'Perhotelan 3',
-    students: generateStudents('PH3', 36),
+    students: generateStudents('PH 3', 36),
     teacher: {
       name: 'Ahmad Fauzi, S.Par.',
       photo: '',
