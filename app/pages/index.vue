@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { classesData, osisBPH, sekbidData, ekskulData } from '~/data/yearbook-data'
+import { osisBPH, sekbidData, ekskulData } from '~/data/yearbook-data'
 </script>
 
 <template>
@@ -23,32 +23,24 @@ import { classesData, osisBPH, sekbidData, ekskulData } from '~/data/yearbook-da
 
     <!-- Classes Section -->
     <div id="classes">
-      <!-- Section divider -->
-      <div class="py-16 bg-navy-800 text-center">
-        <span class="font-display text-rust-400 text-lg tracking-[0.3em]">BAGIAN</span>
-        <h2 class="font-display text-5xl md:text-7xl text-cream-50 tracking-wider mt-2">KELAS</h2>
-        <div class="w-24 h-1 bg-rust-500 mx-auto mt-6" />
-      </div>
-
-      <SectionsClassSection
-        v-for="classData in classesData"
-        :key="classData.classCode"
-        :class-code="classData.classCode"
-        :class-name="classData.className"
-        :students="classData.students"
-        :teacher="classData.teacher"
-        :officers="classData.officers"
-        :retro-photos="classData.retroPhotos"
-      />
+      <!-- Use landing section that links to individual class pages -->
+      <SectionsClassSection />
     </div>
 
     <!-- OSIS Section -->
     <div id="osis">
       <!-- Section divider -->
-      <div class="py-16 bg-rust-600 text-center">
-        <span class="font-display text-cream-200 text-lg tracking-[0.3em]">ORGANISASI</span>
-        <h2 class="font-display text-5xl md:text-7xl text-cream-50 tracking-wider mt-2">OSIS</h2>
-        <div class="w-24 h-1 bg-cream-50 mx-auto mt-6" />
+      <div class="py-16 bg-rust-600 text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-retro-grid opacity-20" />
+        <div class="relative z-10 max-w-5xl mx-auto px-6">
+          <div class="inline-flex items-center gap-4 retro-ticket px-6 py-3">
+            <span class="font-display text-rust-600 text-sm tracking-[0.3em]">ORGANISASI</span>
+            <span class="h-4 w-px bg-brown-300" />
+            <span class="font-display text-navy-900 text-3xl tracking-wider">OSIS</span>
+          </div>
+          <p class="font-serif text-cream-200 italic mt-6">Gerak bersama, cerita bersama</p>
+          <div class="retro-divider w-32 mx-auto mt-6" />
+        </div>
       </div>
 
       <!-- BPH OSIS -->
@@ -67,10 +59,17 @@ import { classesData, osisBPH, sekbidData, ekskulData } from '~/data/yearbook-da
     <!-- Ekskul Section -->
     <div id="ekskul">
       <!-- Section divider -->
-      <div class="py-16 bg-olive-700 text-center">
-        <span class="font-display text-cream-200 text-lg tracking-[0.3em]">KEGIATAN</span>
-        <h2 class="font-display text-5xl md:text-7xl text-cream-50 tracking-wider mt-2">EKSTRAKURIKULER</h2>
-        <div class="w-24 h-1 bg-cream-50 mx-auto mt-6" />
+      <div class="py-16 bg-olive-700 text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-retro-grid opacity-20" />
+        <div class="relative z-10 max-w-5xl mx-auto px-6">
+          <div class="inline-flex items-center gap-4 retro-ticket px-6 py-3">
+            <span class="font-display text-olive-700 text-sm tracking-[0.3em]">KEGIATAN</span>
+            <span class="h-4 w-px bg-brown-300" />
+            <span class="font-display text-navy-900 text-3xl tracking-wider">EKSKUL</span>
+          </div>
+          <p class="font-serif text-cream-200 italic mt-6">Panggung kreativitas di luar kelas</p>
+          <div class="retro-divider w-32 mx-auto mt-6" />
+        </div>
       </div>
 
       <SectionsEkskulSection

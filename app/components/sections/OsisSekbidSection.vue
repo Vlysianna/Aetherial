@@ -28,46 +28,58 @@ const sekbidDescriptions: Record<number, string> = {
 </script>
 
 <template>
-  <section :id="`sekbid-${sekbidNumber}`" class="py-20" :class="sekbidNumber % 2 === 0 ? 'bg-cream-50' : 'bg-navy-50'">
-    <div class="max-w-6xl mx-auto px-6">
+  <section
+    :id="`sekbid-${sekbidNumber}`"
+    class="py-20 retro-texture relative overflow-hidden"
+    :class="sekbidNumber % 2 === 0 ? 'bg-cream-50' : 'bg-navy-50'"
+  >
+    <div class="absolute inset-0 bg-retro-grid" :class="sekbidNumber % 2 === 0 ? 'opacity-20' : 'opacity-10'" />
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
       <!-- Section header -->
-      <div class="text-center mb-12">
-        <div class="inline-block px-6 py-2 border-2 border-rust-400 mb-4">
-          <span class="font-display text-rust-600 text-2xl tracking-wider">SEKBID {{ sekbidNumber }}</span>
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-12">
+        <div class="flex items-center gap-4">
+          <div class="retro-ticket px-5 py-3">
+            <span class="font-display text-rust-600 text-2xl tracking-wider">SEKBID {{ sekbidNumber }}</span>
+          </div>
+          <div>
+            <h3 class="font-serif text-2xl md:text-3xl text-navy-700 italic">
+              {{ sekbidName || sekbidDescriptions[sekbidNumber] }}
+            </h3>
+            <div class="retro-divider w-24 mt-3" />
+          </div>
         </div>
-        <h3 class="font-serif text-2xl md:text-3xl text-navy-700 italic">
-          {{ sekbidName || sekbidDescriptions[sekbidNumber] }}
-        </h3>
-        <div class="retro-divider w-24 mx-auto mt-6" />
+        <div class="sticker text-navy-900">Program Kerja</div>
       </div>
 
       <!-- Members -->
-      <div class="space-y-12">
-        <div 
-          v-for="(member, index) in members" 
+      <div class="space-y-10">
+        <div
+          v-for="(member, index) in members"
           :key="index"
-          class="retro-card p-6 md:p-8"
+          class="paper-stack retro-card p-6 md:p-8"
         >
-          <div class="grid md:grid-cols-4 gap-6">
+          <div class="grid lg:grid-cols-[0.35fr_0.65fr] gap-6 items-center">
             <!-- Member info -->
-            <div class="md:col-span-1 text-center md:text-left">
-              <span class="inline-block px-3 py-1 bg-navy-700 text-cream-50 font-display tracking-wider text-sm mb-3">
+            <div class="text-center lg:text-left">
+              <span
+                class="ribbon text-sm"
+                style="--ribbon-bg: var(--color-navy-700); --ribbon-text: var(--color-cream-50);"
+              >
                 {{ member.role }}
               </span>
-              <h4 class="font-serif text-xl text-navy-800 font-medium">{{ member.name }}</h4>
-              
-              <!-- Social -->
-              <div class="flex justify-center md:justify-start gap-3 mt-3">
-                <a 
-                  v-if="member.instagram" 
+              <h4 class="font-serif text-xl text-navy-800 font-medium mt-3">{{ member.name }}</h4>
+
+              <div class="flex justify-center lg:justify-start gap-3 mt-3">
+                <a
+                  v-if="member.instagram"
                   :href="`https://instagram.com/${member.instagram}`"
                   target="_blank"
                   class="text-brown-400 hover:text-rust-500 transition-colors"
                 >
                   <UIcon name="i-simple-icons-instagram" class="w-5 h-5" />
                 </a>
-                <a 
-                  v-if="member.tiktok" 
+                <a
+                  v-if="member.tiktok"
                   :href="`https://tiktok.com/@${member.tiktok}`"
                   target="_blank"
                   class="text-brown-400 hover:text-navy-600 transition-colors"
@@ -78,13 +90,12 @@ const sekbidDescriptions: Record<number, string> = {
             </div>
 
             <!-- 3 Photos -->
-            <div class="md:col-span-3 grid grid-cols-3 gap-4">
-              <!-- Formal photo -->
+            <div class="grid grid-cols-3 gap-4">
               <div class="polaroid" style="--rotation: -2deg;">
                 <div class="aspect-[3/4] bg-cream-200 overflow-hidden">
-                  <img 
+                  <img
                     v-if="member.formalPhoto"
-                    :src="member.formalPhoto" 
+                    :src="member.formalPhoto"
                     :alt="`${member.name} - Formal`"
                     class="w-full h-full object-cover"
                   >
@@ -95,12 +106,11 @@ const sekbidDescriptions: Record<number, string> = {
                 <p class="text-xs text-center mt-2 text-brown-500 font-serif">Formal</p>
               </div>
 
-              <!-- Activity photo -->
               <div class="polaroid" style="--rotation: 0deg;">
                 <div class="aspect-[3/4] bg-cream-200 overflow-hidden">
-                  <img 
+                  <img
                     v-if="member.activityPhoto"
-                    :src="member.activityPhoto" 
+                    :src="member.activityPhoto"
                     :alt="`${member.name} - Aktivitas`"
                     class="w-full h-full object-cover"
                   >
@@ -111,12 +121,11 @@ const sekbidDescriptions: Record<number, string> = {
                 <p class="text-xs text-center mt-2 text-brown-500 font-serif">Aktivitas</p>
               </div>
 
-              <!-- Casual photo -->
               <div class="polaroid" style="--rotation: 2deg;">
                 <div class="aspect-[3/4] bg-cream-200 overflow-hidden">
-                  <img 
+                  <img
                     v-if="member.casualPhoto"
-                    :src="member.casualPhoto" 
+                    :src="member.casualPhoto"
                     :alt="`${member.name} - Bebas`"
                     class="w-full h-full object-cover"
                   >

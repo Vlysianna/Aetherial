@@ -1,220 +1,250 @@
 import type { ClassData, BPHMember, SekbidData, EkskulData } from '~/types/yearbook'
 
-// Sample data - Replace with actual data
+// Sample real student names for variety
+const sampleNames = [
+  'Adi Pratama', 'Sari Dewi', 'Budi Santoso', 'Maya Putri', 'Rizki Ramadhan',
+  'Indira Sari', 'Fajar Nugraha', 'Putri Ayu', 'Doni Setiawan', 'Rina Maharani',
+  'Ahmad Fauzi', 'Sinta Permata', 'Reza Wijaya', 'Diah Ayu', 'Yoga Pratama',
+  'Lestari Wulan', 'Bayu Kusuma', 'Fitri Handayani', 'Agus Setiawan', 'Nova Sari',
+  'Dedi Rahman', 'Wiwi Rahayu', 'Eko Prasetyo', 'Dewi Lestari', 'Hadi Gunawan',
+  'Siska Amelia', 'Toni Kurniawan', 'Ratna Sari', 'Joko Susanto', 'Lina Kartika',
+  'Bambang Wijaya', 'Eka Putri', 'Andi Permana', 'Sari Wulandari', 'Dika Pratama',
+  'Nina Safitri', 'Rio Firmansyah', 'Mega Sari', 'Irfan Hakim', 'Yuni Astuti'
+]
 
-// Generate placeholder students for a class
-const generateStudents = (count: number) => {
-  return Array.from({ length: count }, (_, i) => ({
-    name: `Siswa ${i + 1}`,
-    photo: '',
-    instagram: `siswa${i + 1}`,
-    tiktok: ''
-  }))
+const sampleInstagram = [
+  'adiprtm_', 'saridewi23', 'budisntso', 'mayaputri_', 'rizkidrm',
+  'indira.sari', 'fajarngr', 'putri_ayu99', 'donisetiawan', 'rina_mhr',
+  'ahmadfauzi_', 'sintaprmta', 'rezawjy', 'diah.ayu', 'yogaprtm',
+  'lestariwln', 'bayuksm', 'fitrihndyn', 'agussetia', 'novasari_',
+  'dedi.rahman', 'wiwirhyu', 'eko_prstyo', 'dewilesri', 'hadigunwan',
+  'siskaamelia', 'tonikrnwn', 'ratnasari_', 'jokossnto', 'linakrtk',
+  'bambangwjy', 'ekaputri_', 'andiprmn', 'sariwlndr', 'dikaprtm',
+  'ninasftri', 'rio.frmnsyh', 'megasari99', 'irfanhkm', 'yuniastt'
+]
+
+// Generate diverse students for a class
+const generateStudents = (classCode: string, count: number = 36) => {
+  const rpl2PhotoBase = classCode === 'RPL2'
+    ? 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/RPL%202/'
+    : ''
+
+  return Array.from({ length: count }, (_, i) => {
+    const nameIndex = (i + classCode.charCodeAt(0)) % sampleNames.length
+    const igIndex = (i + classCode.charCodeAt(0) + 1) % sampleInstagram.length
+
+    return {
+      name: sampleNames[nameIndex],
+      photo: rpl2PhotoBase ? `${rpl2PhotoBase}${i + 1}.JPG` : '',
+      instagram: sampleInstagram[igIndex],
+      tiktok: Math.random() > 0.7 ? sampleInstagram[igIndex].replace('_', '') : undefined // 30% have TikTok
+    }
+  })
 }
 
-// Sample class data
+// Sample class data with diverse students
 export const classesData: ClassData[] = [
   {
     classCode: 'Ulw',
     className: 'Unggulan Wirausaha',
-    students: generateStudents(30),
+    students: generateStudents('Ulw', 36),
     teacher: {
-      name: 'Nama Wali Kelas',
-      photo: '',
-      subject: 'Mata Pelajaran'
+      name: 'Dra. Siti Nurhasanah, M.Pd.',
+      photo: '', // Add actual teacher photo
+      subject: 'Kewirausahaan'
     },
     officers: [
-      { name: 'Ketua Kelas', photo: '', role: 'Ketua', instagram: '' },
-      { name: 'Wakil Ketua', photo: '', role: 'Wakil', instagram: '' },
-      { name: 'Sekretaris', photo: '', role: 'Sekretaris', instagram: '' },
-      { name: 'Bendahara', photo: '', role: 'Bendahara', instagram: '' }
+      { name: 'Muhammad Rayhan', photo: '', role: 'Ketua', instagram: 'rayhan_ulw' },
+      { name: 'Putri Melinda', photo: '', role: 'Wakil', instagram: 'putrimelinda_' },
+      { name: 'Alya Zahra', photo: '', role: 'Sekretaris', instagram: 'alyazhra' },
+      { name: 'Daffa Hakim', photo: '', role: 'Bendahara', instagram: 'daffahkm' }
     ],
-    retroPhotos: ['', '', '']
+    retroPhotos: ['', '', ''] // Add actual retro photo paths
   },
   {
     classCode: 'RPL 1',
     className: 'Rekayasa Perangkat Lunak 1',
-    students: generateStudents(32),
+    students: generateStudents('RPL1', 36),
     teacher: {
-      name: 'Nama Wali Kelas',
+      name: 'Agus Winarto, S.Kom., M.T.',
       photo: '',
-      subject: 'Pemrograman'
+      subject: 'Pemrograman Web'
     },
     officers: [
-      { name: 'Ketua Kelas', photo: '', role: 'Ketua', instagram: '' },
-      { name: 'Wakil Ketua', photo: '', role: 'Wakil', instagram: '' },
-      { name: 'Sekretaris', photo: '', role: 'Sekretaris', instagram: '' },
-      { name: 'Bendahara', photo: '', role: 'Bendahara', instagram: '' }
+      { name: 'Farhan Adiputra', photo: '', role: 'Ketua', instagram: 'farhan_code' },
+      { name: 'Nabila Azzahra', photo: '', role: 'Wakil', instagram: 'nabilazzhr' },
+      { name: 'Kevin Pratama', photo: '', role: 'Sekretaris', instagram: 'kevinprtm' },
+      { name: 'Salsa Amalia', photo: '', role: 'Bendahara', instagram: 'salsaamalia' }
     ],
     retroPhotos: ['', '', '']
   },
   {
     classCode: 'RPL 2',
     className: 'Rekayasa Perangkat Lunak 2',
-    students: generateStudents(32),
+    students: generateStudents('RPL2', 36),
     teacher: {
-      name: 'Nama Wali Kelas',
+      name: 'Bambang Setiadi, S.T., M.Kom.',
       photo: '',
-      subject: 'Pemrograman'
+      subject: 'Basis Data'
     },
     officers: [
-      { name: 'Ketua Kelas', photo: '', role: 'Ketua', instagram: '' },
-      { name: 'Wakil Ketua', photo: '', role: 'Wakil', instagram: '' },
-      { name: 'Sekretaris', photo: '', role: 'Sekretaris', instagram: '' },
-      { name: 'Bendahara', photo: '', role: 'Bendahara', instagram: '' }
+      { name: 'Ryan Maulana', photo: '', role: 'Ketua', instagram: 'ryanmlna' },
+      { name: 'Dinda Safira', photo: '', role: 'Wakil', instagram: 'dindasfr' },
+      { name: 'Arief Budiman', photo: '', role: 'Sekretaris', instagram: 'ariefbudmn' },
+      { name: 'Kirana Putri', photo: '', role: 'Bendahara', instagram: 'kiranaputri_' }
     ],
     retroPhotos: ['', '', '']
   },
   {
     classCode: 'TBS 1',
     className: 'Tata Busana 1',
-    students: generateStudents(28),
+    students: generateStudents('TBS1', 36),
     teacher: {
-      name: 'Nama Wali Kelas',
+      name: 'Rina Susanti, S.Pd.',
       photo: '',
-      subject: 'Tata Busana'
+      subject: 'Desain Busana'
     },
     officers: [
-      { name: 'Ketua Kelas', photo: '', role: 'Ketua', instagram: '' },
-      { name: 'Wakil Ketua', photo: '', role: 'Wakil', instagram: '' },
-      { name: 'Sekretaris', photo: '', role: 'Sekretaris', instagram: '' },
-      { name: 'Bendahara', photo: '', role: 'Bendahara', instagram: '' }
+      { name: 'Bella Cantika', photo: '', role: 'Ketua', instagram: 'bellacntk' },
+      { name: 'Zahra Amini', photo: '', role: 'Wakil', instagram: 'zahraamini_' },
+      { name: 'Anisa Rahma', photo: '', role: 'Sekretaris', instagram: 'anisarhma' },
+      { name: 'Tasya Putri', photo: '', role: 'Bendahara', instagram: 'tasyaputri' }
     ],
     retroPhotos: ['', '', '']
   },
   {
     classCode: 'TBS 2',
     className: 'Tata Busana 2',
-    students: generateStudents(28),
+    students: generateStudents('TBS2', 36),
     teacher: {
-      name: 'Nama Wali Kelas',
+      name: 'Dewi Kartika, S.Pd.',
       photo: '',
-      subject: 'Tata Busana'
+      subject: 'Konstruksi Pola'
     },
     officers: [
-      { name: 'Ketua Kelas', photo: '', role: 'Ketua', instagram: '' },
-      { name: 'Wakil Ketua', photo: '', role: 'Wakil', instagram: '' },
-      { name: 'Sekretaris', photo: '', role: 'Sekretaris', instagram: '' },
-      { name: 'Bendahara', photo: '', role: 'Bendahara', instagram: '' }
+      { name: 'Valeria Sari', photo: '', role: 'Ketua', instagram: 'valeriasari_' },
+      { name: 'Citra Dewi', photo: '', role: 'Wakil', instagram: 'citradewi' },
+      { name: 'Nazwa Fitri', photo: '', role: 'Sekretaris', instagram: 'nazwafitri' },
+      { name: 'Aulia Rahman', photo: '', role: 'Bendahara', instagram: 'auliarhman' }
     ],
     retroPhotos: ['', '', '']
   },
   {
     classCode: 'TBS 3',
     className: 'Tata Busana 3',
-    students: generateStudents(28),
+    students: generateStudents('TBS3', 36),
     teacher: {
-      name: 'Nama Wali Kelas',
+      name: 'Maya Sari, S.Pd., M.Ds.',
       photo: '',
-      subject: 'Tata Busana'
+      subject: 'Fashion Illustration'
     },
     officers: [
-      { name: 'Ketua Kelas', photo: '', role: 'Ketua', instagram: '' },
-      { name: 'Wakil Ketua', photo: '', role: 'Wakil', instagram: '' },
-      { name: 'Sekretaris', photo: '', role: 'Sekretaris', instagram: '' },
-      { name: 'Bendahara', photo: '', role: 'Bendahara', instagram: '' }
+      { name: 'Luna Maharani', photo: '', role: 'Ketua', instagram: 'lunamhrni' },
+      { name: 'Kania Salsabila', photo: '', role: 'Wakil', instagram: 'kaniasalsa' },
+      { name: 'Nadia Permata', photo: '', role: 'Sekretaris', instagram: 'nadiaprmta' },
+      { name: 'Rara Anjani', photo: '', role: 'Bendahara', instagram: 'raraanjani' }
     ],
     retroPhotos: ['', '', '']
   },
   {
     classCode: 'Boga 1',
     className: 'Tata Boga 1',
-    students: generateStudents(30),
+    students: generateStudents('Boga1', 36),
     teacher: {
-      name: 'Nama Wali Kelas',
+      name: 'Chef Indra Kusuma, S.Par.',
       photo: '',
-      subject: 'Tata Boga'
+      subject: 'Kuliner Nusantara'
     },
     officers: [
-      { name: 'Ketua Kelas', photo: '', role: 'Ketua', instagram: '' },
-      { name: 'Wakil Ketua', photo: '', role: 'Wakil', instagram: '' },
-      { name: 'Sekretaris', photo: '', role: 'Sekretaris', instagram: '' },
-      { name: 'Bendahara', photo: '', role: 'Bendahara', instagram: '' }
+      { name: 'Gilang Ramadhan', photo: '', role: 'Ketua', instagram: 'gilang_chef' },
+      { name: 'Ayu Lestari', photo: '', role: 'Wakil', instagram: 'ayulestari_' },
+      { name: 'Fikri Habibi', photo: '', role: 'Sekretaris', instagram: 'fikrihbb' },
+      { name: 'Sari Wulandari', photo: '', role: 'Bendahara', instagram: 'sariwlndr' }
     ],
     retroPhotos: ['', '', '']
   },
   {
     classCode: 'Boga 2',
     className: 'Tata Boga 2',
-    students: generateStudents(30),
+    students: generateStudents('Boga2', 36),
     teacher: {
-      name: 'Nama Wali Kelas',
+      name: 'Chef Ratna Dewi, S.Par., M.M.',
       photo: '',
-      subject: 'Tata Boga'
+      subject: 'Patisserie'
     },
     officers: [
-      { name: 'Ketua Kelas', photo: '', role: 'Ketua', instagram: '' },
-      { name: 'Wakil Ketua', photo: '', role: 'Wakil', instagram: '' },
-      { name: 'Sekretaris', photo: '', role: 'Sekretaris', instagram: '' },
-      { name: 'Bendahara', photo: '', role: 'Bendahara', instagram: '' }
+      { name: 'Rafi Pratama', photo: '', role: 'Ketua', instagram: 'rafiprtm_' },
+      { name: 'Dina Amelia', photo: '', role: 'Wakil', instagram: 'dinaamelia' },
+      { name: 'Haris Firmansyah', photo: '', role: 'Sekretaris', instagram: 'harisfrmnsyh' },
+      { name: 'Vina Safitri', photo: '', role: 'Bendahara', instagram: 'vinasftri' }
     ],
     retroPhotos: ['', '', '']
   },
   {
     classCode: 'Boga 3',
     className: 'Tata Boga 3',
-    students: generateStudents(30),
+    students: generateStudents('Boga3', 36),
     teacher: {
-      name: 'Nama Wali Kelas',
+      name: 'Chef Budi Hartono, S.Par.',
       photo: '',
-      subject: 'Tata Boga'
+      subject: 'Food & Beverage Service'
     },
     officers: [
-      { name: 'Ketua Kelas', photo: '', role: 'Ketua', instagram: '' },
-      { name: 'Wakil Ketua', photo: '', role: 'Wakil', instagram: '' },
-      { name: 'Sekretaris', photo: '', role: 'Sekretaris', instagram: '' },
-      { name: 'Bendahara', photo: '', role: 'Bendahara', instagram: '' }
+      { name: 'Alvin Gunawan', photo: '', role: 'Ketua', instagram: 'alvingnwn' },
+      { name: 'Mira Anggraini', photo: '', role: 'Wakil', instagram: 'miraanggr' },
+      { name: 'Bagas Setiawan', photo: '', role: 'Sekretaris', instagram: 'bagassetia' },
+      { name: 'Lala Permatasari', photo: '', role: 'Bendahara', instagram: 'lalaprmta' }
     ],
     retroPhotos: ['', '', '']
   },
   {
     classCode: 'PH 1',
     className: 'Perhotelan 1',
-    students: generateStudents(32),
+    students: generateStudents('PH1', 36),
     teacher: {
-      name: 'Nama Wali Kelas',
+      name: 'Drs. Surya Wijaya, M.Par.',
       photo: '',
-      subject: 'Perhotelan'
+      subject: 'Front Office Operations'
     },
     officers: [
-      { name: 'Ketua Kelas', photo: '', role: 'Ketua', instagram: '' },
-      { name: 'Wakil Ketua', photo: '', role: 'Wakil', instagram: '' },
-      { name: 'Sekretaris', photo: '', role: 'Sekretaris', instagram: '' },
-      { name: 'Bendahara', photo: '', role: 'Bendahara', instagram: '' }
+      { name: 'Daniel Pratama', photo: '', role: 'Ketua', instagram: 'danielprtm' },
+      { name: 'Celine Maharani', photo: '', role: 'Wakil', instagram: 'celinemhrni' },
+      { name: 'Fadli Rahman', photo: '', role: 'Sekretaris', instagram: 'fadlirhman' },
+      { name: 'Intan Permata', photo: '', role: 'Bendahara', instagram: 'intanprmta' }
     ],
     retroPhotos: ['', '', '']
   },
   {
     classCode: 'PH 2',
     className: 'Perhotelan 2',
-    students: generateStudents(32),
+    students: generateStudents('PH2', 36),
     teacher: {
-      name: 'Nama Wali Kelas',
+      name: 'Lila Sari, S.Par., M.M.',
       photo: '',
-      subject: 'Perhotelan'
+      subject: 'Housekeeping Operations'
     },
     officers: [
-      { name: 'Ketua Kelas', photo: '', role: 'Ketua', instagram: '' },
-      { name: 'Wakil Ketua', photo: '', role: 'Wakil', instagram: '' },
-      { name: 'Sekretaris', photo: '', role: 'Sekretaris', instagram: '' },
-      { name: 'Bendahara', photo: '', role: 'Bendahara', instagram: '' }
+      { name: 'Kevin Alexander', photo: '', role: 'Ketua', instagram: 'kevinalex_' },
+      { name: 'Nadya Putri', photo: '', role: 'Wakil', instagram: 'nadyaputri' },
+      { name: 'Rizky Maulana', photo: '', role: 'Sekretaris', instagram: 'rizkymlna' },
+      { name: 'Shabrina Aulia', photo: '', role: 'Bendahara', instagram: 'shabrinaul' }
     ],
     retroPhotos: ['', '', '']
   },
   {
     classCode: 'PH 3',
     className: 'Perhotelan 3',
-    students: generateStudents(32),
+    students: generateStudents('PH3', 36),
     teacher: {
-      name: 'Nama Wali Kelas',
+      name: 'Ahmad Fauzi, S.Par.',
       photo: '',
-      subject: 'Perhotelan'
+      subject: 'Event Management'
     },
     officers: [
-      { name: 'Ketua Kelas', photo: '', role: 'Ketua', instagram: '' },
-      { name: 'Wakil Ketua', photo: '', role: 'Wakil', instagram: '' },
-      { name: 'Sekretaris', photo: '', role: 'Sekretaris', instagram: '' },
-      { name: 'Bendahara', photo: '', role: 'Bendahara', instagram: '' }
+      { name: 'Raihan Sakti', photo: '', role: 'Ketua', instagram: 'raihansakti' },
+      { name: 'Kalista Dewi', photo: '', role: 'Wakil', instagram: 'kalistadewi' },
+      { name: 'Farrel Aditya', photo: '', role: 'Sekretaris', instagram: 'farreladitya' },
+      { name: 'Aisyah Nabila', photo: '', role: 'Bendahara', instagram: 'aisyahnbl' }
     ],
     retroPhotos: ['', '', '']
   }
