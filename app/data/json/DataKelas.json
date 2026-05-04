@@ -1,0 +1,2489 @@
+[
+  {
+    "kelas": "RPL 1",
+    "siswa": [
+      {
+        "id": 1,
+        "name": "Afdhal Ezhar Rahma Pangestu",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 2,
+        "name": "Al Zahran Shafwan Alamsyah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 3,
+        "name": "Angger Firlana",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 4,
+        "name": "Aretta Rizki Aryanto",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 5,
+        "name": "Arya Satya Aswani Rai",
+        "instagram": "",
+        "id": 6,
+        "name": "Athifa Shevanty Wandinata",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 7,
+        "name": "Ayu Safitri",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 8,
+        "name": "Azka Ghalib Abdad",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 9,
+        "name": "Bobi Shaputra",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 10,
+        "name": "Cindra Bunga Pertiwi",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 11,
+        "name": "Dinda Khoirunnisa",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 12,
+        "name": "Elsa Mifta Hussaadah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 13,
+        "name": "Fachri Darmawan",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 14,
+        "name": "Faiq Naufal Aziz",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 15,
+        "name": "Farel Priya Nugraha",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 16,
+        "name": "Farrel Goesty Pratama",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 17,
+        "name": "Fase Rais Baradika",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 18,
+        "name": "Fathan Adly Santo",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 19,
+        "name": "Fathan Ghazy Adli",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 20,
+        "name": "Fawaz Muhammad Sena Rizki Ramadhan",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 21,
+        "name": "Fieco Alvanu Jansen",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 22,
+        "name": "Habibi Cholis El Ghifari",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 23,
+        "name": "Indah Indriani",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 24,
+        "name": "Kevin Kurnafi",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 25,
+        "name": "Lingga Hilal Arsenio",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 26,
+        "name": "Muhammad Fahrel Farizky Yulius",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 27,
+        "name": "Muhammad Fikriansyah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 28,
+        "name": "Mumtazsa Qarinnia Jannah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 29,
+        "name": "Mutiara Salwa Hazifah Achmad",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 30,
+        "name": "Oscar Alfredo",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 31,
+        "name": "Raisya Desfriyanti Zebua",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 32,
+        "name": "Rifa Amelia",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 33,
+        "name": "Sabrina Rivalya A'ashadieey",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 34,
+        "name": "Salman Alfarizi Darmawan",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 35,
+        "name": "Salsabila Putri Al-Shaleh",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 36,
+        "name": "Tristan Birendra Rozi",
+        "instagram": "",
+        "tiktok": ""
+      }
+    ]
+  },
+  {
+    "kelas": "RPL 2",
+    "siswa": [
+      {
+        "id": 1,
+        "name": "Adelia Tri Ramadhani",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 2,
+        "name": "Ahmad Akmal Fauzan",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 3,
+        "name": "Ahmad Zaqi",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 4,
+        "name": "Aisha Sekar Arina Putri",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 5,
+        "name": "Alfina Khomarul Asih",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 6,
+        "name": "Amelia Febrianti",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 7,
+        "name": "Ananda Keizha Oktavian",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 8,
+        "name": "Andhika Dani Natawidjaja",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 9,
+        "name": "Ari Reivansyah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 10,
+        "name": "Darin Fairuz Romli",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 11,
+        "name": "Eru Nur Al Kafhi",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 12,
+        "name": "Fajri Darmawan",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 13,
+        "name": "Iftikhar Azhar Chaudhry",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 14,
+        "name": "Jean Arby Putra",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 15,
+        "name": "Jeremi Aldi Sunarto",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 16,
+        "name": "Keysha Syakilla Ramadhani",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 17,
+        "name": "Kirana Amanda Putri Firmansyah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 18,
+        "name": "Luky Virya",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 19,
+        "name": "Muhamad Rizki Ramadan",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 20,
+        "name": "Muhammad Daffa Al-Ridzky",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 21,
+        "name": "Muhammad Haidar Farinduan Ammarullah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 22,
+        "name": "Muhammad Rafie Faeza Arrumi",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 23,
+        "name": "Patricia Clara Shinta",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 24,
+        "name": "Raditya Dwi Pahlawadi",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 25,
+        "name": "Restu Adi Putra",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 26,
+        "name": "Rifqi Kamaluddin",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 27,
+        "name": "Salmah Nadya Safitri",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 28,
+        "name": "Satria Jati Dwiyansyah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 29,
+        "name": "Serge Shehzaad Muhammad Mughni S",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 30,
+        "name": "Sharen Nathaniela Melodia Lesnau",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 31,
+        "name": "Syeria Hikmah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 32,
+        "name": "Torda Ibrani Sitorus",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 33,
+        "name": "Triandini Puspitasari",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 34,
+        "name": "Wahidah Mumtazah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 35,
+        "name": "Yosua Kornelius Tarigan",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 36,
+        "name": "Zaky Mubarok",
+        "instagram": "",
+        "tiktok": ""
+      }
+    ]
+  },
+  {
+    "kelas": "TBG 1",
+    "siswa": [
+      {
+        "id": 1,
+        "name": "Ahmad Rizlla Al Fathir",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 2,
+        "name": "Aisyah Nailla Adinda",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 3,
+        "name": "Alea Binar Rimbawan",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 4,
+        "name": "Alya Candradewi",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 5,
+        "name": "Amara Maulida Syaharani",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 6,
+        "name": "Anindya Faiha Sakhi",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 7,
+        "name": "Aprilia Dwi Indah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 8,
+        "name": "Ardiansyah Bagus Pratama",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 9,
+        "name": "Caesal Pandu Rifolia",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 10,
+        "name": "Dea Nurdwi Abri Fasya",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 11,
+        "name": "Fahranny Hafizhah Effendy",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 12,
+        "name": "Irsya Azmi",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 13,
+        "name": "Jilisya Casandra",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 14,
+        "name": "Jodriyanto Saputra",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 15,
+        "name": "Khalisha Salsabila",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 16,
+        "name": "Muhammad Satrya Ananda",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 17,
+        "name": "Nadhifah Oktavia",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 18,
+        "name": "Nafiza Azahra",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 19,
+        "name": "Nasya Sekar Fadillah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 20,
+        "name": "Novita Nurmala Sari",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 21,
+        "name": "Qurais Assagaf",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 22,
+        "name": "Raden Fawwaz Kenvy Siraj",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 23,
+        "name": "Rafi Krishna",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 24,
+        "name": "Rasya Aureliandra",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 25,
+        "name": "Ray Putra Zakaria",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 26,
+        "name": "Resti Pebriana",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 27,
+        "name": "Salsabila",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 28,
+        "name": "Sanaz Zarin",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 29,
+        "name": "Sarah Alfuraira",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 30,
+        "name": "Syesa Keyla Kamila",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 31,
+        "name": "Ummu Nabilah Sihamudda'wah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 32,
+        "name": "Vida Verina Febriani",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 33,
+        "name": "Zah Rayya Putri Hauraaku",
+        "instagram": "",
+        "tiktok": ""
+      }
+    ]
+  },
+  {
+    "kelas": "TBG 2",
+    "siswa": [
+      {
+        "id": 1,
+        "name": "Adinda Ceria Ayuningtyas",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 2,
+        "name": "Almakkiyh Achmad Syafi",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 3,
+        "name": "Andhika Febrian",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 4,
+        "name": "Ardhi Wira Baskara",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 5,
+        "name": "Asya Tika Syafa'ah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 6,
+        "name": "Azzizah Oktaviani Ramadhan",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 7,
+        "name": "Bebi Farel",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 8,
+        "name": "Dede Cahyo Setya Abady",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 9,
+        "name": "Esther Keisha Natalia",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 10,
+        "name": "Ikams Ramdani",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 11,
+        "name": "Ina Rahma Wita",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 12,
+        "name": "Inesta Makaila Putri",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 13,
+        "name": "Jody Novalino Putra",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 14,
+        "name": "Khanza Huwaida Athallah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 15,
+        "name": "Meisya Nur Alisa",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 16,
+        "name": "Muhammad Rafi Andino",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 17,
+        "name": "Nurliana Trisafitri",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 18,
+        "name": "Radhissya Auri Safarah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 19,
+        "name": "Raisyah Puspita",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 20,
+        "name": "Rama Putra Pratama",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 21,
+        "name": "Rania Puspita Ramadhani",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 22,
+        "name": "Reztia Zulika",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 23,
+        "name": "Rizky Amelia Putri",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 24,
+        "name": "Rizqa Nur Sabila",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 25,
+        "name": "Salwa Aulia",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 26,
+        "name": "Shafa Aline Nurrahmah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 27,
+        "name": "Siti Assayyidah Nafisah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 28,
+        "name": "Sulthan Almeisyafran Baleandoe",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 29,
+        "name": "Sumadharma Regatta",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 30,
+        "name": "Talitha Mufidah Herdana",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 31,
+        "name": "Tamara Aulia Lestari",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 32,
+        "name": "Tanty Kirania Kasih",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 33,
+        "name": "Tsabita Mutiara Sya'ban",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 34,
+        "name": "Wirawan Adi Prasetyo",
+        "instagram": "",
+        "tiktok": ""
+      }
+    ]
+  },
+  {
+    "kelas": "TBG 3",
+    "siswa": [
+      {
+        "id": 1,
+        "name": "Adisa Khansa Zakiyah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 2,
+        "name": "Aidah Nur Karimah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 3,
+        "name": "Aliecka Lubna Bilqist",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 4,
+        "name": "Amanda Agustin",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 5,
+        "name": "Aulia Yasmien",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 6,
+        "name": "Carissa Adzra",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 7,
+        "name": "Daniella Sherena Eklesia Dominggos",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 8,
+        "name": "Dinda Ayu Widiyani",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 9,
+        "name": "Febi Rahmawati",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 10,
+        "name": "Firni Fauzia Ramadhani",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 11,
+        "name": "Hafsyah Noor Azizah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 12,
+        "name": "Hanny Refani",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 13,
+        "name": "Ilma Nuriana Dini",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 14,
+        "name": "Jonathan Hintzyhard",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 15,
+        "name": "Juwita Bakara",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 16,
+        "name": "Kanaya Aurelia",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 17,
+        "name": "Keyla Puri Natasya",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 18,
+        "name": "Latifah Asyachilah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 19,
+        "name": "Mega Nurrahmawati",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 20,
+        "name": "Muhamad Rizky Saiman",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 21,
+        "name": "Nailah Dwi Agusty",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 22,
+        "name": "Putri Jessica",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 23,
+        "name": "Queena Rayya Prabandari",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 24,
+        "name": "Ramadhan Rizki Hendriawan",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 25,
+        "name": "Rica Amanda",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 26,
+        "name": "Rifdahtul Nisa",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 27,
+        "name": "Riska Julianti",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 28,
+        "name": "Risqi Larasati",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 29,
+        "name": "Sheby Olencia Riantara",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 30,
+        "name": "Steven Dionisius",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 31,
+        "name": "Tifani Indri Juni Manurung",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 32,
+        "name": "Winda Ardiannisa",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 33,
+        "name": "Zahra Fauziyyah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 34,
+        "name": "Zahra Ramadani",
+        "instagram": "",
+        "tiktok": ""
+      }
+    ]
+  },
+  {
+    "kelas": "PH 1",
+    "siswa": [
+      {
+        "id": 1,
+        "name": "Achmad Fadillah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 2,
+        "name": "Atikah Intan Saritilawah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 3,
+        "name": "Aulia Anindya Kenesty",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 4,
+        "name": "Aura Bunga Ramadhani",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 5,
+        "name": "Cindy Asha Lathifah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 6,
+        "name": "Deby Rora Meilisa",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 7,
+        "name": "Diaz Hafizhah Majid",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 8,
+        "name": "Elsya Andynalia",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 9,
+        "name": "Fatma Trijuniar",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 10,
+        "name": "Filza Almira Syafitri",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 11,
+        "name": "Haura Nurhaliza",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 12,
+        "name": "Innayah Amelia Nissa",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 13,
+        "name": "Juliana Adya Rahma",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 14,
+        "name": "Kiky Ramadhani Irmansyah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 15,
+        "name": "Luthfika Cellsy Olivia",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 16,
+        "name": "Mei Sela Nabila",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 17,
+        "name": "Nadin Albiansyah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 18,
+        "name": "Nabila Ramdania",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 19,
+        "name": "Nabilla Citra Maharany",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 20,
+        "name": "Nadia Ramadhani",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 21,
+        "name": "Nayla Putri Ramadhani",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 22,
+        "name": "Nur Apriliana",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 23,
+        "name": "Rahma Putri Aprillianty",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 24,
+        "name": "Reeva Cahaya Setiady",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 25,
+        "name": "Reivan Ramadhan",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 26,
+        "name": "Reva Melodia Hermansyah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 27,
+        "name": "Rosita Oktaviani Putri",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 28,
+        "name": "Salwa Nur Aisyah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 29,
+        "name": "Shakilla Mutia Gunawan",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 30,
+        "name": "Siti Annisa Salsabilla",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 31,
+        "name": "Syaqilah Nabillah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 32,
+        "name": "Terra Ananda Yani",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 33,
+        "name": "Vino Aldi Nugroho",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 34,
+        "name": "Zahra Kania Putri",
+        "instagram": "",
+        "tiktok": ""
+      }
+    ]
+  },
+  {
+    "kelas": "PH 2",
+    "siswa": [
+      {
+        "id": 1,
+        "name": "Ahmad Damar Daniswara",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 2,
+        "name": "Ahmad Miftahul Khoir",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 3,
+        "name": "Alfiany Fariza",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 4,
+        "name": "Alyaa Pratiwi",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 5,
+        "name": "Amira Syarifah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 6,
+        "name": "Aulia Putri Liandra",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 7,
+        "name": "Dewi Yulianti",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 8,
+        "name": "Dhiya Awliya",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 9,
+        "name": "Dinda Dwi Lestari",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 10,
+        "name": "Fardhan Ervanda Kurniawan",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 11,
+        "name": "Fasky Elnofadilla",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 12,
+        "name": "Fina Ayu Rosyanti Permata",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 13,
+        "name": "Khalifa Akhmad Al Ghifari",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 14,
+        "name": "Lazialita Azzhra",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 15,
+        "name": "Listiana Ika Muflihah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 16,
+        "name": "M.Fadli Muzaki",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 17,
+        "name": "Maedyna Aileen",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 18,
+        "name": "Mei Ajeng Iray Anggunanti",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 19,
+        "name": "Meifira Wulandari",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 20,
+        "name": "Melinda Ratna Wati",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 21,
+        "name": "Muhamad Abdul Fathir Suhail",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 22,
+        "name": "Muhamad Ramdani",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 23,
+        "name": "Nurul Fitriah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 24,
+        "name": "Oktaviani Putri Fatimatuz Zahra",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 25,
+        "name": "Raden Roro Kirana Eksanti Putri",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 26,
+        "name": "Sabrina Nur Rohim",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 27,
+        "name": "Saskia Julyanti",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 28,
+        "name": "Savira Rahma Putri",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 29,
+        "name": "Stevania Rizka Chandra",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 30,
+        "name": "Syafana Aslan Pratiwi",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 31,
+        "name": "Syafira Alya Putri",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 32,
+        "name": "Tantry Laily Rifda",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 33,
+        "name": "Tsurayya Dwi Kartika Putri",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 34,
+        "name": "Zahra Kayla Nuraini",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 35,
+        "name": "Zahrah Adlia Maryati",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 36,
+        "name": "Zamzami Fathurrahman",
+        "instagram": "",
+        "tiktok": ""
+      }
+    ]
+  },
+  {
+    "kelas": "PH 3",
+    "siswa": [
+      {
+        "id": 1,
+        "name": "Alika Tsaqilla Azzahra",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 2,
+        "name": "Bunga Priskilla",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 3,
+        "name": "Dwi Andika Hadiwidjoyo",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 4,
+        "name": "Fadly Octa Adriansyah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 5,
+        "name": "Greace Sihite",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 6,
+        "name": "Iin Klara Mufidah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 7,
+        "name": "Kaila Yerika",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 8,
+        "name": "Kerin Tuharea",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 9,
+        "name": "Khelvin Aldino Pregio",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 10,
+        "name": "Marchella Gracia Cheryl",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 11,
+        "name": "Marissa Nuraini",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 12,
+        "name": "Muhamad Rizky Ardiansyah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 13,
+        "name": "Muhamad Roby Firli Azka",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 14,
+        "name": "Mustofa Al Rajib",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 15,
+        "name": "Nadia Elsa Indri Yani",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 16,
+        "name": "Naomi Melinda Tinambunan",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 17,
+        "name": "Nazhira Anindita",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 18,
+        "name": "Nisrina Maulidina",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 19,
+        "name": "Nur Azizatul Fadhilah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 20,
+        "name": "Olivia Mohan",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 21,
+        "name": "Raihan Saputra",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 22,
+        "name": "Rain Imanuel Sianturi",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 23,
+        "name": "Revi Azalea Al-Ma'rifatul Aliyah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 24,
+        "name": "Rury Dwi Amanda",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 25,
+        "name": "Safa Aulia Ardiansyah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 26,
+        "name": "Sheline Claudia",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 27,
+        "name": "Siti Auziyah Tarafah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 28,
+        "name": "Keyza Zahira Al Mahdani",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 29,
+        "name": "Velicha Maylani",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 30,
+        "name": "Viola Nuril Syakila",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 31,
+        "name": "Yessika Agustin",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 32,
+        "name": "Yosia Matthew Noya",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 33,
+        "name": "Zahra Bonita Anggraeni",
+        "instagram": "",
+        "tiktok": ""
+      }
+    ]
+  },
+  {
+    "kelas": "TBS 1",
+    "siswa": [
+      {
+        "id": 1,
+        "name": "Afrilliani Diah Sekar Sari",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 2,
+        "name": "Aisyah Bilqis",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 3,
+        "name": "Aisyah Fatmasari",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 4,
+        "name": "Ananda Aurel",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 5,
+        "name": "Arintika Nurlaela Fitri",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 6,
+        "name": "Ayu Lestari",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 7,
+        "name": "Cika Noorlestari",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 8,
+        "name": "Dwi Ayu Pratiwi",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 9,
+        "name": "Febrina Arsya Ariiqah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 10,
+        "name": "Fintan Ayu Ningsih",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 11,
+        "name": "Firanda Aprilia Putri Hariyadi",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 12,
+        "name": "Jasmine Alfian Prinsa",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 13,
+        "name": "Kayla Sabrina",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 14,
+        "name": "Khaila Zahra Muamar",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 15,
+        "name": "Laila Nur Muawanah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 16,
+        "name": "Liony Zulkarnain",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 17,
+        "name": "Marsha Azzahra",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 18,
+        "name": "Mutiara Agustin",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 19,
+        "name": "Natasya Putri Utami",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 20,
+        "name": "Nazwa Azizah Putri Atika",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 21,
+        "name": "Nofi Amelia",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 22,
+        "name": "Nur Afiyah Al Mahfudz",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 23,
+        "name": "Queenta Aulia",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 24,
+        "name": "Raisya Dea Ananda",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 25,
+        "name": "Salwa Oktaviani",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 26,
+        "name": "Silfina Hesi",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 27,
+        "name": "Siti Nur Istiqomah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 28,
+        "name": "Tiara Nur Saarah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 29,
+        "name": "Yeni Safitri",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 30,
+        "name": "Yusfita Atmala",
+        "instagram": "",
+        "tiktok": ""
+      }
+    ]
+  },
+  {
+    "kelas": "TBS 2",
+    "siswa": [
+      {
+        "id": 1,
+        "name": "Aisyah Khoirunnisa Azzahra",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 2,
+        "name": "Alanis Febrianti Akbani",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 3,
+        "name": "Arvika Maulani Zahra",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 4,
+        "name": "Aulia Andini Apriyati",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 5,
+        "name": "Aurel Kirania Suharlan",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 6,
+        "name": "Ayu Nindya Putri",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 7,
+        "name": "Azizah Aulia Hamzah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 8,
+        "name": "Azzahra Keyzya Putri Hermaya",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 9,
+        "name": "Azzahra Oktaviani Ramadhan",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 10,
+        "name": "Bela Safira Octavia",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 11,
+        "name": "Dalilah Rohmah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 12,
+        "name": "Dealiana Aurellia",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 13,
+        "name": "Denisa Zahara",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 14,
+        "name": "Destianty Al Rabbani",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 15,
+        "name": "Dinar Susanto",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 16,
+        "name": "Ervina Nadila",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 17,
+        "name": "Giezka Putri Kailla Luna",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 18,
+        "name": "Jessica Nirmala Putri",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 19,
+        "name": "Leira Arvia Widya",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 20,
+        "name": "Lutfiyyah Nayla Nuur Hussy",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 21,
+        "name": "Marsha Bunga Vadila",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 22,
+        "name": "Nadia Aisyah Bella",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 23,
+        "name": "Nadya Fitri Hasibuan",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 24,
+        "name": "Naila Rahayu",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 25,
+        "name": "Nivadatur Rohimah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 26,
+        "name": "Rachma Adelia Putri",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 27,
+        "name": "Rafina Putri Julyanty",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 28,
+        "name": "Ratu Maulidah Azzahra",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 29,
+        "name": "Rina Primidilah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 30,
+        "name": "Risky Dwi Amelia",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 31,
+        "name": "Sissy Hati",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 32,
+        "name": "Wasilah Anggraini",
+        "instagram": "",
+        "tiktok": ""
+      }
+    ]
+  },
+  {
+    "kelas": "TBS 3",
+    "siswa": [
+      {
+        "id": 1,
+        "name": "Aisyah Rania",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 2,
+        "name": "Alya Septiana Putri",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 3,
+        "name": "Audrey Anastasia Simangunsong",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 4,
+        "name": "Aulia Kamila",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 5,
+        "name": "Aulia Wahyuni Putri",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 6,
+        "name": "Cantika Anggraini",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 7,
+        "name": "Cheryl Apriliadelin Putri",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 8,
+        "name": "Devi Febriyanti",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 9,
+        "name": "Deya Siti Nurmala Putri",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 10,
+        "name": "Fadillah Nur Rahayu",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 11,
+        "name": "Fajrina Dwi Maharani",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 12,
+        "name": "Giftania Anabela Gultom",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 13,
+        "name": "Jezzyca Adinda Pratiwi",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 14,
+        "name": "Kharin Manurung",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 15,
+        "name": "Khoirunnisa Aulia",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 16,
+        "name": "Lilian Aqila Rahman",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 17,
+        "name": "Maria Stevani",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 18,
+        "name": "Meilani Safitri",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 19,
+        "name": "Monika Mega Naomy Manurung",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 20,
+        "name": "Nabila Azalia Putri",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 21,
+        "name": "Nadia Putri Ayu",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 22,
+        "name": "Naura Khansa Ramadania Riza",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 23,
+        "name": "Nayfa Aulia Ramadhani",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 24,
+        "name": "Nazila Hanna Rizqia",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 25,
+        "name": "Niken Sapitri Oktaviani",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 26,
+        "name": "Nova Aulia",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 27,
+        "name": "Olivia Lavenia Ginting",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 28,
+        "name": "Putri Alysha",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 29,
+        "name": "Rima Anzani",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 30,
+        "name": "Sahwahita Ratri Sasikirana",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 31,
+        "name": "Saskia Marturia Sinaga",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 32,
+        "name": "Sheyla Alief",
+        "instagram": "",
+        "tiktok": ""
+      }
+    ]
+  },
+  {
+    "kelas": "ULW",
+    "siswa": [
+      {
+        "id": 1,
+        "name": "Airyn Sekar Wangi",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 2,
+        "name": "Ajeng Citra Agustin",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 3,
+        "name": "Alika Nur Azahra",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 4,
+        "name": "Alycia Maria Kaunang",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 5,
+        "name": "Al Zahra Laviolla",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 6,
+        "name": "Andytha Mahadewi Aurellia Az.Zahra",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 7,
+        "name": "Anna Nur Kholishah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 8,
+        "name": "Athia Larasati",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 9,
+        "name": "Bunga Della Prasasty",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 10,
+        "name": "Carissa Setia Hasna Mulandary",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 11,
+        "name": "Dava Natamado Purba",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 12,
+        "name": "Dea Elfrida Edenchya Putriwita Malau",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 13,
+        "name": "Erika Shelyana Dewi",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 14,
+        "name": "Ezra Swandaris Manik",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 15,
+        "name": "Gabriella Shalisha",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 16,
+        "name": "Hatamase Asri Sangadji",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 17,
+        "name": "Holipah Tul Jahra",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 18,
+        "name": "Jasmine Natalie Putri Montolalu",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 19,
+        "name": "Jazzyra Azalea Latif",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 20,
+        "name": "Kholisah Syakirah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 21,
+        "name": "Laila Rahmadhani",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 22,
+        "name": "Lidia Nurjanah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 23,
+        "name": "Margaretha Lousianna Simamora",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 24,
+        "name": "Muhammad Naufal Dzaky",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 25,
+        "name": "Muthia Azzhara",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 26,
+        "name": "Naza Raihanun",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 27,
+        "name": "Niverga Tristianty",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 28,
+        "name": "Priska Julia Azaniyah",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 29,
+        "name": "Raisya Syarani",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 30,
+        "name": "Renata Indah Afrilova",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 31,
+        "name": "Satrio Pandu Putro",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 32,
+        "name": "Siti Rahma Atika",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 33,
+        "name": "Titania Aourelia Azzahra",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 34,
+        "name": "Zahrawati",
+        "instagram": "",
+        "tiktok": ""
+      },
+      {
+        "id": 35,
+        "name": "Zalwa Tiara Medina",
+        "instagram": "",
+        "tiktok": ""
+      }
+    ]
+  }
+]
