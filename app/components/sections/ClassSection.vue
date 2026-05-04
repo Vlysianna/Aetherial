@@ -145,12 +145,11 @@ const departments = [
 
                 <div class="flex -space-x-3 mt-5 mb-4 relative z-10">
                   <div
-                    v-for="n in Math.min(5, classData.students.length)"
-                    :key="n"
-                    class="w-10 h-10 rounded-full border-3 border-cream-50 bg-cream-200 flex items-center justify-center overflow-hidden shadow-sm hover:scale-110 hover:z-10 transition-transform duration-300"
-                  >
-                    <UIcon name="i-lucide-user" class="w-5 h-5 text-brown-400" />
-                  </div>
+                    v-for="(student, index) in classData.students.slice(0, 5)"
+                    :key="`${classData.classCode}-${index}`"
+                    class="w-10 h-10 rounded-full border-3 border-cream-50 bg-cream-200 bg-cover bg-center shadow-sm hover:scale-110 hover:z-10 transition-transform duration-300"
+                    :style="{ backgroundImage: student.photo ? `url(${student.photo})` : undefined }"
+                  />
                   <div
                     v-if="classData.students.length > 5"
                     class="w-10 h-10 rounded-full border-3 border-cream-50 bg-navy-600 flex items-center justify-center shadow-sm hover:scale-110 hover:z-10 transition-transform duration-300"

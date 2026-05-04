@@ -27,7 +27,10 @@ const sampleInstagram = [
 const generateStudents = (classCode: string, count: number = 36) => {
   const photoBaseByClass: Record<string, string> = {
     RPL1: 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/RPL%201/',
-    RPL2: 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/RPL%202/'
+    RPL2: 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/RPL%202/',
+    PH1: 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/PH%201/',
+    PH2: 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/PH%202/',
+    PH3: 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/PH%203/'
   }
 
   const photoBase = photoBaseByClass[classCode] ?? ''
