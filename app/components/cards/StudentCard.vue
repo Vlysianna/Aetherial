@@ -16,6 +16,15 @@ interface Props {
 
 const props = defineProps<Props>()
 const isHovered = ref(false)
+const imageError = ref(false)
+const showPhoto = computed(() => Boolean(props.photo) && !imageError.value)
+
+watch(
+  () => props.photo,
+  () => {
+    imageError.value = false
+  }
+)
 </script>
 
 <template>
@@ -28,10 +37,11 @@ const isHovered = ref(false)
       <!-- Photo 3:4 aspect ratio -->
       <div class="aspect-[3/4] bg-cream-200 overflow-hidden relative">
         <img 
-          v-if="photo"
+          v-if="showPhoto"
           :src="photo" 
           :alt="name"
           class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:brightness-105"
+          @error="imageError = true"
         >
         <div v-else class="w-full h-full flex items-center justify-center text-brown-300">
           <UIcon name="i-lucide-user" class="w-16 h-16 transition-transform duration-500 group-hover:scale-110" />

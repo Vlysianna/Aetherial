@@ -6,8 +6,8 @@ const sampleNames = [
   'Indira Sari', 'Fajar Nugraha', 'Putri Ayu', 'Doni Setiawan', 'Rina Maharani',
   'Ahmad Fauzi', 'Sinta Permata', 'Reza Wijaya', 'Diah Ayu', 'Yoga Pratama',
   'Lestari Wulan', 'Bayu Kusuma', 'Fitri Handayani', 'Agus Setiawan', 'Nova Sari',
-  'Dedi Rahman', 'Wiwi Rahayu', 'Eko Prasetyo', 'Dewi Lestari', 'Hadi Gunawan',
-  'Siska Amelia', 'Toni Kurniawan', 'Ratna Sari', 'Joko Susanto', 'Lina Kartika',
+  'Dedi Rahman', 'Wiwi Rahayu', 'Eko Prasetyo', 'Dewi Lestari', 'Patricia Clara',
+  'Raditya Pahlawadi', 'Toni Kurniawan', 'Ratna Sari', 'Joko Susanto', 'Lina Kartika',
   'Bambang Wijaya', 'Eka Putri', 'Andi Permana', 'Sari Wulandari', 'Dika Pratama',
   'Nina Safitri', 'Rio Firmansyah', 'Mega Sari', 'Irfan Hakim', 'Yuni Astuti'
 ]
@@ -25,9 +25,15 @@ const sampleInstagram = [
 
 // Generate diverse students for a class
 const generateStudents = (classCode: string, count: number = 36) => {
-  const rpl2PhotoBase = classCode === 'RPL2'
-    ? 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/RPL%202/'
-    : ''
+  const photoBaseByClass: Record<string, string> = {
+    RPL1: 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/RPL%201/',
+    RPL2: 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/RPL%202/',
+    PH1: 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/PH%201/',
+    PH2: 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/PH%202/',
+    PH3: 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/PH%203/'
+  }
+
+  const photoBase = photoBaseByClass[classCode] ?? ''
 
   return Array.from({ length: count }, (_, i) => {
     const nameIndex = (i + classCode.charCodeAt(0)) % sampleNames.length
@@ -35,7 +41,7 @@ const generateStudents = (classCode: string, count: number = 36) => {
 
     return {
       name: sampleNames[nameIndex],
-      photo: rpl2PhotoBase ? `${rpl2PhotoBase}${i + 1}.JPG` : '',
+      photo: photoBase ? `${photoBase}${i + 1}.JPG` : '',
       instagram: sampleInstagram[igIndex],
       tiktok: Math.random() > 0.7 ? sampleInstagram[igIndex].replace('_', '') : undefined // 30% have TikTok
     }
