@@ -2,7 +2,6 @@ import type { ClassData, BPHMember, SekbidData, EkskulData, Student } from '~/ty
 
 const allStudents = import.meta.glob<{ default: Student[] }>('~/data/json/students/*.json', { eager: true })
 
-
 // Generate diverse students for a class
 const generateStudents = (classCode: string, count: number = 36) => {
   const photoBaseByClass: Record<string, string> = {
@@ -22,18 +21,13 @@ const generateStudents = (classCode: string, count: number = 36) => {
 
   const photoBase = photoBaseByClass[classCode] ?? ''
 
-  const studentsData = computed(() => {
-    const path = `/data/json/students/${classCode.toUpperCase()}.json`
-    console.log(path)
-    return allStudents[path]?.default || [] as Student[]
-  })
+  const path = `/data/json/students/${classCode.toUpperCase()}.json`
+  const studentsData = allStudents[path]?.default || []
 
-  const studentsWithPhoto = studentsData.value?.map((student, index) => ({
+  return studentsData.map((student, index) => ({
     ...student,
     photo: photoBase ? `${photoBase}${index + 1}.JPG` : ''
   }))
-
-  return studentsWithPhoto
 }
 
 // Sample class data with diverse students
