@@ -175,7 +175,7 @@ const rawClassesData: ClassData[] = [
     teacher: {
       name: 'Widya Devi, M.Pd.',
       photo: '',
-      subject: 'Kuliner'
+      subject: 'z'
     },
     officers: [
       { name: 'Alvin Gunawan', photo: '', role: 'Ketua', instagram: 'alvingnwn' },
@@ -337,8 +337,8 @@ function extractEkskulName(url: string): string {
   if (!url) return ''
   const filename = decodeURIComponent(url.split('/').pop() || '')
   const withoutExt = filename.replace(/\.[^/.]+$/, '')
-  // Format: "Pembina _ Nama" or "Pembina Ikhwan _ Nama" etc
-  const match = withoutExt.match(/^(?:Pembina|Pelatih)[^_]*_\s*(.+)$/)
+  // Format: "Pembina _ Nama" or "Pembina Ikhwan - Nama" etc
+  const match = withoutExt.match(/^(?:Pembina|Pelatih)[^_-]*[_-]\s*(.+)$/i)
   return match?.[1]?.trim() || withoutExt
 }
 
@@ -365,7 +365,7 @@ export const ekskulData: import('~/types/yearbook').EkskulData[] = [
   },
   {
     ekskulName: 'Futsal',
-    ekskulIcon: 'i-lucide-goal',
+    ekskulIcon: 'i-lucide-sport-shoe',
     groupPhotos: buildEkskulPhotos('Futsal'),
     members: [
       makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Futsal/Pembina%20_%20Ibnu%20Widianto%20S.pd.png', 'Pembina')
@@ -373,7 +373,7 @@ export const ekskulData: import('~/types/yearbook').EkskulData[] = [
   },
   {
     ekskulName: 'Voli',
-    ekskulIcon: 'i-lucide-activity',
+    ekskulIcon: 'i-lucide-volleyball',
     groupPhotos: buildEkskulPhotos('Voli'),
     members: [
       makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Voli/Pembina%20Waluya%20Priyatna%20S.Kom.png', 'Pembina'),

@@ -75,7 +75,7 @@ const interactiveCardStyle = computed(() => {
             BUKU TAHUNAN SEKOLAH
           </p>
           <p class="font-serif text-brown-600 text-sm mt-2">
-            Dibuat dengan penuh cinta oleh Tim Yearbook
+           Dibuat oleh Tim Buku Tahunan
           </p>
         </div>
       </div>
