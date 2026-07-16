@@ -89,13 +89,32 @@ const deptColor = computed(() => {
   return { bg: 'var(--color-rust-500)', light: 'var(--color-cream-100)', text: 'var(--color-navy-800)', ribbon: '#D95A2B', accent: 'rust' }
 })
 
+// Lightbox
+const lightboxSrc = ref<string | null>(null)
+const lightboxLabel = ref('')
+
+const openLightbox = (src: string | undefined, label: string) => {
+  if (!src) return
+  lightboxSrc.value = src
+  lightboxLabel.value = label
+  document.body.style.overflow = 'hidden'
+}
+
+const closeLightbox = () => {
+  lightboxSrc.value = null
+  document.body.style.overflow = ''
+}
+
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
+  // Close lightbox on ESC key
+  window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox() })
   setTimeout(() => { isVisible.value = true }, 100)
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
+  document.body.style.overflow = ''
 })
 </script>
 
@@ -316,44 +335,27 @@ onUnmounted(() => {
             </div>
           </div>
 
-          <!-- Teacher info + officers -->
-          <div class="lg:col-span-7 space-y-8 animate-fade-in-right stagger-2">
+          <!-- Teacher info (quote card only) -->
+          <div class="lg:col-span-7 flex items-center animate-fade-in-right stagger-2">
             <!-- Quote card -->
-            <div class="retro-card p-6 md:p-8 border-l-4 relative overflow-hidden" :style="{ borderLeftColor: deptColor.bg }">
-              <UIcon name="i-lucide-quote" class="absolute top-4 right-4 w-10 h-10 text-brown-100" />
-              <p class="font-serif text-lg md:text-xl text-navy-800 italic leading-relaxed relative z-10">
+            <div class="retro-card p-6 md:p-10 border-l-4 relative overflow-hidden w-full" :style="{ borderLeftColor: deptColor.bg }">
+              <UIcon name="i-lucide-quote" class="absolute top-4 right-4 w-12 h-12 text-brown-100" />
+              <p class="font-serif text-lg md:text-2xl text-navy-800 italic leading-relaxed relative z-10">
                 "Setiap siswa adalah cahaya yang bersinar dengan caranya sendiri. Bersama kelas ini, kita menulis cerita yang tak terlupakan."
               </p>
-              <div class="mt-4 pt-4 border-t border-brown-100 flex items-center gap-3">
+              <div class="mt-6 pt-4 border-t border-brown-100 flex items-center gap-3">
                 <div class="w-8 h-[2px] rounded" :style="{ background: deptColor.bg }" />
                 <span class="font-display text-sm tracking-wider text-brown-500">{{ classData?.teacher?.name }}</span>
               </div>
-            </div>
-
-            <!-- Officers section -->
-            <div>
-              <div class="flex items-center gap-3 mb-5">
-                <span class="font-display text-lg text-navy-700 tracking-wider">PENGURUS KELAS</span>
-                <div class="h-[1px] flex-grow bg-brown-200" />
-              </div>
-              <div class="grid grid-cols-2 gap-4">
-                <div
-                  v-for="(officer, i) in classData?.officers"
-                  :key="i"
-                  class="retro-card p-4 flex items-center gap-3 group hover-lift cursor-default animate-fade-in-up"
-                  :class="`stagger-${i + 1}`"
-                >
-                  <div class="w-12 h-12 rounded-full bg-cream-200 overflow-hidden border-2 border-brown-200 flex-shrink-0 group-hover:border-rust-300 transition-colors duration-300">
-                    <img v-if="officer.photo" :src="officer.photo" :alt="officer.name" class="w-full h-full object-cover" >
-                    <div v-else class="w-full h-full flex items-center justify-center text-brown-300">
-                      <UIcon name="i-lucide-user" class="w-6 h-6" />
-                    </div>
-                  </div>
-                  <div class="min-w-0">
-                    <p class="font-serif text-navy-800 text-sm font-medium leading-tight group-hover:text-rust-600 transition-colors truncate">{{ officer.name }}</p>
-                    <p class="font-display text-xs tracking-wider mt-0.5" :style="{ color: deptColor.bg }">{{ officer.role?.toUpperCase() }}</p>
-                    <p v-if="officer.instagram" class="text-xs text-brown-400 mt-0.5 font-sans">@{{ officer.instagram }}</p>
-                  </div>
+              <!-- Extra info row -->
+              <div class="mt-4 flex flex-wrap gap-4 text-sm text-brown-400 font-serif italic">
+                <div class="flex items-center gap-1.5">
+                  <UIcon name="i-lucide-book-open" class="w-4 h-4" />
+                  {{ classData?.teacher?.subject }}
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <UIcon name="i-lucide-school" class="w-4 h-4" />
+                  SMK Negeri 24 Jakarta
                 </div>
               </div>
             </div>
@@ -384,70 +386,52 @@ onUnmounted(() => {
           <div class="h-[2px] flex-grow bg-gradient-to-r from-brown-200 to-transparent rounded ml-2" />
         </div>
 
-        <!-- Two photos layout -->
-        <div class="grid md:grid-cols-2 gap-10 lg:gap-16">
-          <!-- Photo 1 – main (tilted left) -->
+        <!-- Three photos layout -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
           <div
-            class="polaroid hover-tilt group animate-fade-in-left stagger-1 cursor-pointer"
-            style="--rotation: -2deg;"
+            v-for="idx in 3"
+            :key="idx"
+            class="polaroid hover-tilt group animate-fade-in-up"
+            :class="[`stagger-${idx}`, classData?.retroPhotos?.[idx - 1] ? 'cursor-zoom-in' : 'cursor-default']"
+            :style="`--rotation: ${idx === 1 ? -2 : idx === 2 ? 2.5 : -1.5}deg;`"
+            @click="openLightbox(classData?.retroPhotos?.[idx - 1], `Foto Bersama ${idx} · Kelas ${classData?.classCode}`)"
           >
             <div class="aspect-[4/3] bg-cream-200 overflow-hidden relative">
               <img
-                v-if="classData?.retroPhotos?.[0]"
-                :src="classData.retroPhotos[0]"
-                :alt="`Foto bersama 1 kelas ${classData?.classCode}`"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                v-if="classData?.retroPhotos?.[idx - 1]"
+                :src="classData?.retroPhotos?.[idx - 1]"
+                :alt="`Foto bersama ${idx} kelas ${classData?.classCode}`"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 pointer-events-none select-none"
+                draggable="false"
               >
               <div v-else class="w-full h-full flex flex-col items-center justify-center gap-3 text-brown-300">
-                <UIcon name="i-lucide-users" class="w-20 h-20 transition-transform duration-500 group-hover:scale-110" />
-                <span class="font-serif text-sm italic text-brown-400">Foto bersama 1</span>
+                <UIcon :name="idx === 1 ? 'i-lucide-users' : idx === 2 ? 'i-lucide-camera' : 'i-lucide-image'" class="w-16 h-16 transition-transform duration-500 group-hover:scale-110" />
+                <span class="font-serif text-sm italic text-brown-400">Foto bersama {{ idx }}</span>
               </div>
 
-              <!-- Film-strip sprocket holes -->
-              <div class="absolute top-0 left-0 bottom-0 w-5 bg-black/30 flex flex-col justify-around items-center py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <span v-for="h in 6" :key="h" class="w-3 h-2 bg-white/70 rounded-sm" />
-              </div>
-              <div class="absolute top-0 right-0 bottom-0 w-5 bg-black/30 flex flex-col justify-around items-center py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <span v-for="h in 6" :key="h" class="w-3 h-2 bg-white/70 rounded-sm" />
-              </div>
-
-              <!-- Label overlay on hover -->
-              <div class="absolute inset-0 bg-gradient-to-t from-navy-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div class="absolute bottom-3 left-3">
-                  <span class="font-display text-xs text-cream-200 tracking-wider bg-black/30 px-2 py-0.5 rounded">FOTO 01 · CLASS OF 2026</span>
+              <!-- Extra effects based on index -->
+              <!-- Film-strip sprocket holes for idx 1 -->
+              <template v-if="idx === 1">
+                <div class="absolute top-0 left-0 bottom-0 w-5 bg-black/30 flex flex-col justify-around items-center py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <span v-for="h in 6" :key="h" class="w-3 h-2 bg-white/70 rounded-sm" />
                 </div>
-              </div>
-            </div>
-            <div class="mt-4 text-center">
-              <p class="font-serif text-sm text-brown-600 italic group-hover:text-rust-600 transition-colors duration-300">Kelas {{ classData?.classCode }} · Foto Bersama</p>
-              <p class="font-display text-xs text-brown-400 tracking-wider mt-1">2025 / 2026</p>
-            </div>
-          </div>
+                <div class="absolute top-0 right-0 bottom-0 w-5 bg-black/30 flex flex-col justify-around items-center py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <span v-for="h in 6" :key="h" class="w-3 h-2 bg-white/70 rounded-sm" />
+                </div>
+              </template>
+              
+              <!-- Vintage color overlay for idx 2 -->
+              <div v-if="idx === 2" class="absolute inset-0 bg-amber-700/10 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-          <!-- Photo 2 – secondary (tilted right) -->
-          <div
-            class="polaroid hover-tilt group animate-fade-in-right stagger-2 cursor-pointer"
-            style="--rotation: 2.5deg;"
-          >
-            <div class="aspect-[4/3] bg-cream-200 overflow-hidden relative">
-              <img
-                v-if="classData?.retroPhotos?.[1]"
-                :src="classData.retroPhotos[1]"
-                :alt="`Foto bersama 2 kelas ${classData?.classCode}`"
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              >
-              <div v-else class="w-full h-full flex flex-col items-center justify-center gap-3 text-brown-300">
-                <UIcon name="i-lucide-camera" class="w-20 h-20 transition-transform duration-500 group-hover:scale-110" />
-                <span class="font-serif text-sm italic text-brown-400">Foto bersama 2</span>
-              </div>
-
-              <!-- Vintage color overlay on hover -->
-              <div class="absolute inset-0 bg-amber-700/10 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-
-              <!-- Label overlay on hover -->
+              <!-- Label + zoom hint overlay on hover -->
               <div class="absolute inset-0 bg-gradient-to-t from-navy-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div class="absolute bottom-3 left-3">
-                  <span class="font-display text-xs text-cream-200 tracking-wider bg-black/30 px-2 py-0.5 rounded">FOTO 02 · CLASS OF 2026</span>
+                <div class="absolute bottom-3 left-3 flex items-center gap-2">
+                  <span class="font-display text-xs text-cream-200 tracking-wider bg-black/30 px-2 py-0.5 rounded">FOTO 0{{ idx }} · CLASS OF 2026</span>
+                </div>
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" v-if="classData?.retroPhotos?.[idx - 1]">
+                  <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                    <UIcon name="i-lucide-zoom-in" class="w-6 h-6 text-white" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -595,5 +579,81 @@ onUnmounted(() => {
 
 .polaroid:hover {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* ── Lightbox ── */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10000;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.lightbox-close:hover {
+  background: rgba(217, 90, 43, 0.8);
+  transform: scale(1.1);
+}
+
+.lightbox-inner {
+  max-width: min(90vw, 1000px);
+  max-height: 90svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 80svh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.lightbox-caption {
+  text-align: center;
+  padding: 0.5rem 1rem;
+  background: rgba(255,255,255,0.06);
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Lightbox transition */
+.lightbox-enter-active,
+.lightbox-leave-active {
+  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.lightbox-enter-from,
+.lightbox-leave-to {
+  opacity: 0;
+  transform: scale(0.95);
 }
 </style>

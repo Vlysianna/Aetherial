@@ -2,23 +2,23 @@ import type { ClassData, BPHMember, SekbidData, EkskulData, Student } from '~/ty
 
 const allStudents = import.meta.glob<{ default: Student[] }>('~/data/json/students/*.json', { eager: true })
 
+const photoBaseByClass: Record<string, string> = {
+  'RPL 1': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/RPL%201/',
+  'RPL 2': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/RPL%202/',
+  'PH 1': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/PH%201/',
+  'PH 2': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/PH%202/',
+  'PH 3': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/PH%203/',
+  'TBG 1': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/TBG%201/',
+  'TBG 2': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/TBG%202/',
+  'TBG 3': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/TBG%203/',
+  'TBS 1': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/TBS%201/',
+  'TBS 2': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/TBS%202/',
+  'TBS 3': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/TBS%203/',
+  'ULW': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/ULW/'
+}
+
 // Generate diverse students for a class
 const generateStudents = (classCode: string, count: number = 36) => {
-  const photoBaseByClass: Record<string, string> = {
-    'RPL 1': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/RPL%201/',
-    'RPL 2': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/RPL%202/',
-    'PH 1': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/PH%201/',
-    'PH 2': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/PH%202/',
-    'PH 3': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/PH%203/',
-    'TBG 1': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/TBG%201/',
-    'TBG 2': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/TBG%202/',
-    'TBG 3': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/TBG%203/',
-    'TBS 1': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/TBS%201/',
-    'TBS 2': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/TBS%202/',
-    'TBS 3': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/TBS%203/',
-    'ULW': 'https://xvjjgubskwigdzdugoxg.supabase.co//storage/v1/object/public/aetherial/Siswa/ULW/'
-  }
-
   const photoBase = photoBaseByClass[classCode] ?? ''
 
   const path = `/data/json/students/${classCode.toUpperCase()}.json`
@@ -31,15 +31,15 @@ const generateStudents = (classCode: string, count: number = 36) => {
 }
 
 // Sample class data with diverse students
-export const classesData: ClassData[] = [
+const rawClassesData: ClassData[] = [
   {
-    classCode: 'Ulw',
+    classCode: 'ULW',
     className: 'Unggulan Wirausaha',
-    students: generateStudents('Ulw', 36),
+    students: generateStudents('ULW', 36),
     teacher: {
-      name: 'Dra. Siti Nurhasanah, M.Pd.',
+      name: 'Nurlatifah Ismail,S.pd,M.par.',
       photo: '', // Add actual teacher photo
-      subject: 'Kewirausahaan'
+      subject: 'Pariwisata'
     },
     officers: [
       { name: 'Muhammad Rayhan', photo: '', role: 'Ketua', instagram: 'rayhan_ulw' },
@@ -54,9 +54,9 @@ export const classesData: ClassData[] = [
     className: 'Rekayasa Perangkat Lunak 1',
     students: generateStudents('RPL 1', 36),
     teacher: {
-      name: 'Agus Winarto, S.Kom., M.T.',
+      name: 'DRS. Ajisar',
       photo: '',
-      subject: 'Pemrograman Web'
+      subject: 'Pemrograman Java'
     },
     officers: [
       { name: 'Farhan Adiputra', photo: '', role: 'Ketua', instagram: 'farhan_code' },
@@ -71,9 +71,9 @@ export const classesData: ClassData[] = [
     className: 'Rekayasa Perangkat Lunak 2',
     students: generateStudents('RPL 2', 36),
     teacher: {
-      name: 'Bambang Setiadi, S.T., M.Kom.',
+      name: 'Ahmad Hilal M.Kom',
       photo: '',
-      subject: 'Basis Data'
+      subject: 'Pemrogaman Web'
     },
     officers: [
       { name: 'Ryan Maulana', photo: '', role: 'Ketua', instagram: 'ryanmlna' },
@@ -105,9 +105,9 @@ export const classesData: ClassData[] = [
     className: 'Tata Busana 2',
     students: generateStudents('TBS 2', 36),
     teacher: {
-      name: 'Dewi Kartika, S.Pd.',
+      name: 'Retno widowati,S.Pd',
       photo: '',
-      subject: 'Konstruksi Pola'
+      subject: 'Desain Busana'
     },
     officers: [
       { name: 'Valeria Sari', photo: '', role: 'Ketua', instagram: 'valeriasari_' },
@@ -122,9 +122,9 @@ export const classesData: ClassData[] = [
     className: 'Tata Busana 3',
     students: generateStudents('TBS 3', 36),
     teacher: {
-      name: 'Maya Sari, S.Pd., M.Ds.',
+      name: 'Oktaviana Tegar Marpaung, S.Sn., M.Pd',
       photo: '',
-      subject: 'Fashion Illustration'
+      subject: 'Desain Busana'
     },
     officers: [
       { name: 'Luna Maharani', photo: '', role: 'Ketua', instagram: 'lunamhrni' },
@@ -139,9 +139,9 @@ export const classesData: ClassData[] = [
     className: 'Tata Boga 1',
     students: generateStudents('TBG 1', 36),
     teacher: {
-      name: 'Chef Indra Kusuma, S.Par.',
+      name: 'Zulfadina, S.Pd',
       photo: '',
-      subject: 'Kuliner Nusantara'
+      subject: 'Kuliner'
     },
     officers: [
       { name: 'Gilang Ramadhan', photo: '', role: 'Ketua', instagram: 'gilang_chef' },
@@ -156,9 +156,9 @@ export const classesData: ClassData[] = [
     className: 'Tata Boga 2',
     students: generateStudents('TBG 2', 36),
     teacher: {
-      name: 'Chef Ratna Dewi, S.Par., M.M.',
+      name: 'Khairunnisa, S.Pd',
       photo: '',
-      subject: 'Patisserie'
+      subject: 'Kuliner'
     },
     officers: [
       { name: 'Rafi Pratama', photo: '', role: 'Ketua', instagram: 'rafiprtm_' },
@@ -200,14 +200,14 @@ export const classesData: ClassData[] = [
       { name: 'Fadli Rahman', photo: '', role: 'Sekretaris', instagram: 'fadlirhman' },
       { name: 'Intan Permata', photo: '', role: 'Bendahara', instagram: 'intanprmta' }
     ],
-    retroPhotos: ['', '', '']
+    retroPhotos: ['https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/PH%201/fotobersama/1111.JPG', 'https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/PH%201/fotobersama/2222.JPG', 'https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/PH%201/fotobersama/3333.JPG']
   },
   {
     classCode: 'PH 2',
     className: 'Perhotelan 2',
     students: generateStudents('PH 2', 36),
     teacher: {
-      name: 'Lila Sari, S.Par., M.M.',
+      name: 'Kartina, ST.Par.',
       photo: '',
       subject: 'Housekeeping Operations'
     },
@@ -238,109 +238,87 @@ export const classesData: ClassData[] = [
   }
 ]
 
+export const classesData: ClassData[] = rawClassesData.map(c => {
+  const photoBase = photoBaseByClass[c.classCode] ?? ''
+  return {
+    ...c,
+    teacher: {
+      ...c.teacher,
+      photo: photoBase ? `${photoBase}0.JPG` : ''
+    },
+    retroPhotos: photoBase ? [
+      `${photoBase}fotobersama/1111.JPG`,
+      `${photoBase}fotobersama/2222.JPG`,
+      `${photoBase}fotobersama/3333.JPG`
+    ] : ['', '', '']
+  }
+})
+
 // BPH OSIS data
-export const osisBPH: BPHMember[] = [
-  { name: 'Nama Ketua OSIS', photo: '', role: 'Ketua', instagram: '' },
-  { name: 'Nama Wakil Ketua', photo: '', role: 'Wakil Ketua', instagram: '' },
-  { name: 'Nama Sekretaris 1', photo: '', role: 'Sekretaris 1', instagram: '' },
-  { name: 'Nama Sekretaris 2', photo: '', role: 'Sekretaris 2', instagram: '' },
-  { name: 'Nama Bendahara 1', photo: '', role: 'Bendahara 1', instagram: '' },
-  { name: 'Nama Bendahara 2', photo: '', role: 'Bendahara 2', instagram: '' }
+const bphUrls = [
+  'https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/OSIS/BPH/1.%20Muhammad%20Rafie%20Faeza%20Arrumi%20-%20Ketua%20Osis.JPG',
+  'https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/OSIS/BPH/2.%20Kirana%20Amanda%20Putri%20Firmansyah%20-%20Wakil%20Ketua%20Osis.JPG',
+  'https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/OSIS/BPH/3.%20Adelia%20Tri%20Ramadhani%20-%20Sekretaris%201.JPG',
+  'https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/OSIS/BPH/5.%20Amara%20Maulida%20Syaharani%20-%20Bendahara%201.JPG',
+  'https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/OSIS/BPH/6.%20Caesal%20Pandu%20Rifolia%20-%20Bendahara%202.JPG'
 ]
+
+const defaultBphRoles: BPHMember['role'][] = ['Ketua', 'Wakil Ketua', 'Sekretaris', 'Bendahara 1', 'Bendahara 2']
+
+export const osisBPH: BPHMember[] = bphUrls.map((url, index) => {
+  let name = `Anggota ${index + 1}`
+  try {
+    const filename = decodeURIComponent(url.split('/').pop() || '')
+    const withoutExt = filename.replace(/\.[^/.]+$/, "") // Hapus ekstensi .JPG
+
+    // Ekstrak nama dari format "1. Nama - Jabatan" atau "1. Nama"
+    const match = withoutExt.match(/^\d+\.\s*(.+?)(?:\s*-\s*.+)?$/)
+    if (match && match[1]) {
+      name = match[1].trim()
+    } else {
+      name = withoutExt
+    }
+  } catch (e) { }
+
+  return {
+    name,
+    photo: url,
+    role: defaultBphRoles[index] || 'Ketua',
+    instagram: ''
+  }
+})
 
 // Sekbid data
 export const sekbidData: SekbidData[] = [
   {
     sekbidNumber: 1,
     sekbidName: 'Ketakwaan Terhadap Tuhan Yang Maha Esa',
-    members: [
-      {
-        name: 'Koordinator Sekbid 1',
-        role: 'Koordinator',
-        formalPhoto: '',
-        activityPhoto: '',
-        casualPhoto: '',
-        instagram: ''
-      },
-      {
-        name: 'Anggota Sekbid 1',
-        role: 'Anggota',
-        formalPhoto: '',
-        activityPhoto: '',
-        casualPhoto: '',
-        instagram: ''
-      }
-    ]
+    groupPhotos: ['', '']
   },
   {
     sekbidNumber: 2,
     sekbidName: 'Kehidupan Berbangsa dan Bernegara',
-    members: [
-      {
-        name: 'Koordinator Sekbid 2',
-        role: 'Koordinator',
-        formalPhoto: '',
-        activityPhoto: '',
-        casualPhoto: '',
-        instagram: ''
-      }
-    ]
+    groupPhotos: ['', '']
   },
   {
     sekbidNumber: 3,
     sekbidName: 'Pendidikan Pendahuluan Bela Negara',
-    members: [
-      {
-        name: 'Koordinator Sekbid 3',
-        role: 'Koordinator',
-        formalPhoto: '',
-        activityPhoto: '',
-        casualPhoto: '',
-        instagram: ''
-      }
-    ]
+    groupPhotos: ['', '']
   },
   {
     sekbidNumber: 4,
     sekbidName: 'Kepribadian dan Budi Pekerti Luhur',
-    members: [
-      {
-        name: 'Koordinator Sekbid 4',
-        role: 'Koordinator',
-        formalPhoto: '',
-        activityPhoto: '',
-        casualPhoto: '',
-        instagram: ''
-      }
-    ]
+    groupPhotos: ['', '']
   },
   {
     sekbidNumber: 5,
     sekbidName: 'Berorganisasi, Pendidikan Politik dan Kepemimpinan',
-    members: [
-      {
-        name: 'Koordinator Sekbid 5',
-        role: 'Koordinator',
-        formalPhoto: '',
-        activityPhoto: '',
-        casualPhoto: '',
-        instagram: ''
-      }
-    ]
+    groupPhotos: ['', '']
   },
   {
     sekbidNumber: 6,
     sekbidName: 'Keterampilan dan Kewirausahaan',
-    members: [
-      {
-        name: 'Koordinator Sekbid 6',
-        role: 'Koordinator',
-        formalPhoto: '',
-        activityPhoto: '',
-        casualPhoto: '',
-        instagram: ''
-      }
-    ]
+    groupPhotos: ['', '']
   }
 ]
 
@@ -349,7 +327,7 @@ export const ekskulData: EkskulData[] = [
   {
     ekskulName: 'Pramuka',
     ekskulIcon: 'i-lucide-tent',
-    coverPhoto: '',
+    groupPhotos: ['', ''],
     members: [
       { name: 'Nama Pembina', photo: '', role: 'Pembina', instagram: '' },
       { name: 'Nama Pelatih', photo: '', role: 'Pelatih', instagram: '' },
@@ -362,7 +340,7 @@ export const ekskulData: EkskulData[] = [
   {
     ekskulName: 'PMR',
     ekskulIcon: 'i-lucide-heart-pulse',
-    coverPhoto: '',
+    groupPhotos: ['', ''],
     members: [
       { name: 'Nama Pembina', photo: '', role: 'Pembina', instagram: '' },
       { name: 'Nama Pelatih', photo: '', role: 'Pelatih', instagram: '' },
@@ -375,7 +353,7 @@ export const ekskulData: EkskulData[] = [
   {
     ekskulName: 'Basket',
     ekskulIcon: 'i-lucide-dribbble',
-    coverPhoto: '',
+    groupPhotos: ['', ''],
     members: [
       { name: 'Nama Pembina', photo: '', role: 'Pembina', instagram: '' },
       { name: 'Nama Pelatih', photo: '', role: 'Pelatih', instagram: '' },
@@ -388,7 +366,7 @@ export const ekskulData: EkskulData[] = [
   {
     ekskulName: 'Paduan Suara',
     ekskulIcon: 'i-lucide-music',
-    coverPhoto: '',
+    groupPhotos: ['', ''],
     members: [
       { name: 'Nama Pembina', photo: '', role: 'Pembina', instagram: '' },
       { name: 'Nama Pelatih', photo: '', role: 'Pelatih', instagram: '' },

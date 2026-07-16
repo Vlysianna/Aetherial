@@ -29,7 +29,7 @@ export interface ClassData {
 export interface BPHMember {
   name: string
   photo: string
-  role: 'Ketua' | 'Wakil Ketua' | 'Sekretaris 1' | 'Sekretaris 2' | 'Bendahara 1' | 'Bendahara 2'
+  role: 'Ketua' | 'Wakil Ketua' | 'Sekretaris' | 'Bendahara 1' | 'Bendahara 2'
   instagram?: string
   tiktok?: string
 }
@@ -47,7 +47,7 @@ export interface SekbidMember {
 export interface SekbidData {
   sekbidNumber: number
   sekbidName: string
-  members: SekbidMember[]
+  groupPhotos: string[]
 }
 
 export interface EkskulMember {
@@ -62,7 +62,7 @@ export interface EkskulData {
   ekskulName: string
   ekskulIcon?: string
   members: EkskulMember[]
-  coverPhoto?: string
+  groupPhotos: string[]
 }
 
 // Class order as specified

@@ -43,7 +43,7 @@ const deptStyles = {
 
 // Group classes by department
 const departments = [
-  { name: 'Usaha Layanan Wisata', classes: classesData.filter(c => c.classCode.startsWith('Ulw')), style: deptStyles.rust },
+  { name: 'Usaha Layanan Wisata', classes: classesData.filter(c => c.classCode.startsWith('ULW')), style: deptStyles.rust },
   { name: 'Rekayasa Perangkat Lunak', classes: classesData.filter(c => c.classCode.startsWith('RPL')), style: deptStyles.navy },
   { name: 'Tata Busana', classes: classesData.filter(c => c.classCode.startsWith('TBS')), style: deptStyles.olive },
   { name: 'Tata Boga', classes: classesData.filter(c => c.classCode.startsWith('TBG')), style: deptStyles.brown },

@@ -66,18 +66,15 @@ const interactivePhotoStyle = computed(() => {
         <div class="flex justify-center animate-fade-in-left stagger-2">
           <div class="relative paper-stack retro-card p-5 md:p-6 bg-cream-50">
             <div class="relative transition-transform duration-300" :style="interactivePhotoStyle">
-              <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-cream-200/80 border border-brown-200 rotate-2 z-10 shadow-sm" />
-              <div class="polaroid" style="--rotation: -2deg;">
-                <div class="aspect-[3/4] w-64 md:w-80 bg-cream-200 overflow-hidden relative">
-                  <img
-                    :src="principalPhoto"
-                    :alt="principalName"
-                    class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                    onerror="this.style.display='none'"
-                  >
-                  <div class="w-full h-full flex items-center justify-center text-brown-400">
-                    <UIcon name="i-lucide-user" class="w-24 h-24" />
-                  </div>
+              <div class="aspect-[3/4] w-64 md:w-80 bg-cream-200 overflow-hidden relative rounded-md border-2 border-brown-200 shadow-sm">
+                <img
+                  :src="principalPhoto"
+                  :alt="principalName"
+                  class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  onerror="this.style.display='none'"
+                >
+                <div class="w-full h-full flex items-center justify-center text-brown-400">
+                  <UIcon name="i-lucide-user" class="w-24 h-24" />
                 </div>
               </div>
             </div>

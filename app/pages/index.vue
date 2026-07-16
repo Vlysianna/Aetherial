@@ -52,7 +52,7 @@ import { osisBPH, sekbidData, ekskulData } from '~/data/yearbook-data'
         :key="sekbid.sekbidNumber"
         :sekbid-number="sekbid.sekbidNumber"
         :sekbid-name="sekbid.sekbidName"
-        :members="sekbid.members"
+        :group-photos="sekbid.groupPhotos"
       />
     </div>
 
@@ -78,7 +78,7 @@ import { osisBPH, sekbidData, ekskulData } from '~/data/yearbook-data'
         :ekskul-name="ekskul.ekskulName"
         :ekskul-icon="ekskul.ekskulIcon"
         :members="ekskul.members"
-        :cover-photo="ekskul.coverPhoto"
+        :group-photos="ekskul.groupPhotos"
       />
     </div>
 
