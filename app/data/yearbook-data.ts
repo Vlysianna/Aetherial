@@ -173,9 +173,9 @@ const rawClassesData: ClassData[] = [
     className: 'Tata Boga 3',
     students: generateStudents('TBG 3', 36),
     teacher: {
-      name: 'Chef Budi Hartono, S.Par.',
+      name: 'Widya Devi, M.Pd.',
       photo: '',
-      subject: 'Food & Beverage Service'
+      subject: 'Kuliner'
     },
     officers: [
       { name: 'Alvin Gunawan', photo: '', role: 'Ketua', instagram: 'alvingnwn' },
@@ -289,91 +289,204 @@ export const osisBPH: BPHMember[] = bphUrls.map((url, index) => {
 })
 
 // Sekbid data
+const sekbidBase = 'https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/OSIS/Sekbid'
+
+const buildSekbidPhotos = (n: number): [string, string, string] => [
+  `${sekbidBase}%20${n}/1.JPG`,
+  `${sekbidBase}%20${n}/2.JPG`,
+  `${sekbidBase}%20${n}/3.JPG`
+]
+
 export const sekbidData: SekbidData[] = [
   {
     sekbidNumber: 1,
-    sekbidName: 'Ketakwaan Terhadap Tuhan Yang Maha Esa',
-    groupPhotos: ['', '']
+    sekbidName: 'Iman dan Ketakwaan',
+    groupPhotos: buildSekbidPhotos(1)
   },
   {
     sekbidNumber: 2,
-    sekbidName: 'Kehidupan Berbangsa dan Bernegara',
-    groupPhotos: ['', '']
+    sekbidName: 'Kepribadian Unggul, Wawasan Luas dan Bela Negara',
+    groupPhotos: buildSekbidPhotos(2)
   },
   {
     sekbidNumber: 3,
-    sekbidName: 'Pendidikan Pendahuluan Bela Negara',
-    groupPhotos: ['', '']
+    sekbidName: 'Prestasi Akademik/Olahraga',
+    groupPhotos: buildSekbidPhotos(3)
   },
   {
     sekbidNumber: 4,
-    sekbidName: 'Kepribadian dan Budi Pekerti Luhur',
-    groupPhotos: ['', '']
+    sekbidName: 'Kewirausahaan dan Keterampilan',
+    groupPhotos: buildSekbidPhotos(4)
   },
   {
     sekbidNumber: 5,
-    sekbidName: 'Berorganisasi, Pendidikan Politik dan Kepemimpinan',
-    groupPhotos: ['', '']
+    sekbidName: 'Sastra Dan Budaya',
+    groupPhotos: buildSekbidPhotos(5)
   },
   {
     sekbidNumber: 6,
-    sekbidName: 'Keterampilan dan Kewirausahaan',
-    groupPhotos: ['', '']
+    sekbidName: 'Humas',
+    groupPhotos: buildSekbidPhotos(6)
   }
 ]
 
 // Ekskul data
-export const ekskulData: EkskulData[] = [
+const ekskulBase = 'https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul'
+
+function extractEkskulName(url: string): string {
+  if (!url) return ''
+  const filename = decodeURIComponent(url.split('/').pop() || '')
+  const withoutExt = filename.replace(/\.[^/.]+$/, '')
+  // Format: "Pembina _ Nama" or "Pembina Ikhwan _ Nama" etc
+  const match = withoutExt.match(/^(?:Pembina|Pelatih)[^_]*_\s*(.+)$/)
+  return match?.[1]?.trim() || withoutExt
+}
+
+function makeMember(url: string, role: 'Pembina' | 'Pelatih'): EkskulMember {
+  return { name: extractEkskulName(url), photo: url, role, instagram: '' }
+}
+
+function buildEkskulPhotos(folder: string, count = 3): string[] {
+  const encoded = folder.split(' ').join('%20')
+  return Array.from({ length: count }, (_, i) => `${ekskulBase}/${encoded}/${i + 1}.JPG`)
+}
+
+type EkskulMember = import('~/types/yearbook').EkskulMember
+
+export const ekskulData: import('~/types/yearbook').EkskulData[] = [
   {
-    ekskulName: 'Pramuka',
-    ekskulIcon: 'i-lucide-tent',
-    groupPhotos: ['', ''],
+    ekskulName: 'Basket',
+    ekskulIcon: 'i-lucide-dribbble',
+    groupPhotos: buildEkskulPhotos('Basket'),
     members: [
-      { name: 'Nama Pembina', photo: '', role: 'Pembina', instagram: '' },
-      { name: 'Nama Pelatih', photo: '', role: 'Pelatih', instagram: '' },
-      { name: 'Nama Ketua', photo: '', role: 'Ketua', instagram: '' },
-      { name: 'Nama Wakil', photo: '', role: 'Wakil', instagram: '' },
-      { name: 'Nama Sekretaris', photo: '', role: 'Sekretaris', instagram: '' },
-      { name: 'Nama Bendahara', photo: '', role: 'Bendahara', instagram: '' }
+      makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Basket/Pembina%20_%20Bunga%20Mahardika,%20S.Pd.png', 'Pembina'),
+      makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Basket/Pelatih%20_%20Ikbal%20Wahyu%20Dermawan%20S.Pd..png', 'Pelatih')
+    ]
+  },
+  {
+    ekskulName: 'Futsal',
+    ekskulIcon: 'i-lucide-goal',
+    groupPhotos: buildEkskulPhotos('Futsal'),
+    members: [
+      makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Futsal/Pembina%20_%20Ibnu%20Widianto%20S.pd.png', 'Pembina')
+    ]
+  },
+  {
+    ekskulName: 'Voli',
+    ekskulIcon: 'i-lucide-activity',
+    groupPhotos: buildEkskulPhotos('Voli'),
+    members: [
+      makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Voli/Pembina%20Waluya%20Priyatna%20S.Kom.png', 'Pembina'),
+      makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Voli/Pelatih%20Teguh%20Atmadji.png', 'Pelatih')
+    ]
+  },
+  {
+    ekskulName: 'Silat',
+    ekskulIcon: 'i-lucide-swords',
+    groupPhotos: buildEkskulPhotos('Silat'),
+    members: [
+      makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Silat/Pembina%20_%20Chairul%20Fajri%20S.Pd.png', 'Pembina'),
+      makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Silat/Pelatih%20_%20Muhammad%20Ivan%20Fadhilah.png', 'Pelatih')
+    ]
+  },
+  {
+    ekskulName: 'Hadroh',
+    ekskulIcon: 'i-lucide-music-2',
+    groupPhotos: buildEkskulPhotos('Hadroh'),
+    members: [
+      makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Hadroh/Pembina%20_%20Ari%20Al%20Ghifari,%20M.Pd.png', 'Pembina'),
+      makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Hadroh/Pelatih%20_%20Fahrozi%20Fritama%20Putra.png', 'Pelatih')
+    ]
+  },
+  {
+    ekskulName: 'Modern Dance',
+    ekskulIcon: 'i-lucide-music',
+    groupPhotos: buildEkskulPhotos('Modern%20Dance'),
+    members: [
+      makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Modern%20Dance/Pembina%20_%20Kameliyanti,%20S.Pd.,%20M.Pd.png', 'Pembina')
+    ]
+  },
+  {
+    ekskulName: 'Paskibra',
+    ekskulIcon: 'i-lucide-flag',
+    groupPhotos: buildEkskulPhotos('Paskibra'),
+    members: [
+      makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Paskibra/Pembina%20_%20Khairunnisa,%20S.Pd.png', 'Pembina'),
+      makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Paskibra/Pelatih%20-%20Wahyu%20Navis%20Ridho.png', 'Pelatih')
+    ]
+  },
+  {
+    ekskulName: 'PIK-R',
+    ekskulIcon: 'i-lucide-heart',
+    groupPhotos: buildEkskulPhotos('PIK-R'),
+    members: [
+      makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/PIK-R/Pembina%20_%20Putri%20Maharnovitasari,%20S.Pd.png', 'Pembina'),
+      makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/PIK-R/Pelatih%20_%20Rizkiya.png', 'Pelatih')
     ]
   },
   {
     ekskulName: 'PMR',
     ekskulIcon: 'i-lucide-heart-pulse',
-    groupPhotos: ['', ''],
+    groupPhotos: buildEkskulPhotos('PMR'),
     members: [
-      { name: 'Nama Pembina', photo: '', role: 'Pembina', instagram: '' },
-      { name: 'Nama Pelatih', photo: '', role: 'Pelatih', instagram: '' },
-      { name: 'Nama Ketua', photo: '', role: 'Ketua', instagram: '' },
-      { name: 'Nama Wakil', photo: '', role: 'Wakil', instagram: '' },
-      { name: 'Nama Sekretaris', photo: '', role: 'Sekretaris', instagram: '' },
-      { name: 'Nama Bendahara', photo: '', role: 'Bendahara', instagram: '' }
+      makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/PMR/Pembina%20_%20Dini%20%20Rachmawatu%20S.Pd.png', 'Pembina'),
+      makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/PMR/Pelatih%20_%20Rido%20Mulyadi.png', 'Pelatih')
     ]
   },
   {
-    ekskulName: 'Basket',
-    ekskulIcon: 'i-lucide-dribbble',
-    groupPhotos: ['', ''],
+    ekskulName: 'Pramuka',
+    ekskulIcon: 'i-lucide-tent',
+    groupPhotos: buildEkskulPhotos('Pramuka'),
     members: [
-      { name: 'Nama Pembina', photo: '', role: 'Pembina', instagram: '' },
-      { name: 'Nama Pelatih', photo: '', role: 'Pelatih', instagram: '' },
-      { name: 'Nama Ketua', photo: '', role: 'Ketua', instagram: '' },
-      { name: 'Nama Wakil', photo: '', role: 'Wakil', instagram: '' },
-      { name: 'Nama Sekretaris', photo: '', role: 'Sekretaris', instagram: '' },
-      { name: 'Nama Bendahara', photo: '', role: 'Bendahara', instagram: '' }
+      makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Pramuka/Pembina%20-%20Yanti%20Sabartina%20S.Pd.png', 'Pembina'),
+      makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Pramuka/Pembina%20-%20Yanti%20Sabartina%20S.Pd.png', 'Pembina'),
+      makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Pramuka/Pembina%20-%20Hadi%20Santoso%20S.Pd.png', 'Pembina'),
+      makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Pramuka/Pembina%20-%20Retno%20Widowati%20S.Pd.png', 'Pembina')
     ]
   },
   {
-    ekskulName: 'Paduan Suara',
-    ekskulIcon: 'i-lucide-music',
-    groupPhotos: ['', ''],
+    ekskulName: 'Rohis',
+    ekskulIcon: 'i-lucide-book-open',
+    groupPhotos: buildEkskulPhotos('Rohis'),
     members: [
-      { name: 'Nama Pembina', photo: '', role: 'Pembina', instagram: '' },
-      { name: 'Nama Pelatih', photo: '', role: 'Pelatih', instagram: '' },
-      { name: 'Nama Ketua', photo: '', role: 'Ketua', instagram: '' },
-      { name: 'Nama Wakil', photo: '', role: 'Wakil', instagram: '' },
-      { name: 'Nama Sekretaris', photo: '', role: 'Sekretaris', instagram: '' },
-      { name: 'Nama Bendahara', photo: '', role: 'Bendahara', instagram: '' }
+      makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Rohis/Pembina%20Ikhwan%20-%20Yazid%20Umami,%20S.Pd.png', 'Pembina'),
+      makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Rohis/Pembina%20%20Akhwat%20-%20Tjandra%20Sarie%20Astoeti,%20M.Pd.png', 'Pembina'),
+      makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Rohis/Pelatih%20Ikhwan%20-%20Ishomullah.png', 'Pelatih'),
+      makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Rohis/Pelatih%20Akhwat%20-%20Nurul%20Aulia%20Rahma,%20S.Pd.png', 'Pelatih')
+    ]
+  },
+  {
+    ekskulName: 'Rokhris',
+    ekskulIcon: 'i-lucide-book-open',
+    groupPhotos: buildEkskulPhotos('Rokhris'),
+    members: [
+      makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Rokhris/Yari%20Zega%20S.Pd.png', 'Pembina')
+    ]
+  },
+  {
+    ekskulName: 'Tari Saman',
+    ekskulIcon: 'i-lucide-sparkles',
+    groupPhotos: buildEkskulPhotos('Tari%20Saman'),
+    members: [
+      makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Tari%20Saman/Pembina%20_%20Christiana%20Sukmawati%20M.pd.png', 'Pembina'),
+      makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Tari%20Saman/Pelatih%20_%20Dedi%20Suherman.png', 'Pelatih')
+    ]
+  },
+  {
+    ekskulName: 'Tari Tradisional',
+    ekskulIcon: 'i-lucide-star',
+    groupPhotos: buildEkskulPhotos('Tari%20Tradisional'),
+    members: [
+      makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Tari%20Tradisional/Pembina%20-%20Kholifa%20Qisti%20Rohima,%20M.%20Pd.png', 'Pembina'),
+      makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Tari%20Tradisional/Pelatih%20-%20Kurniasih.png', 'Pelatih')
+    ]
+  },
+  {
+    ekskulName: 'Teater',
+    ekskulIcon: 'i-lucide-theater',
+    groupPhotos: buildEkskulPhotos('Teater'),
+    members: [
+      makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Teater/Pembina%20_%20Kameliyanti,%20S.Pd.,%20M.Pd.png', 'Pembina')
     ]
   }
 ]

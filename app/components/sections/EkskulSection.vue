@@ -19,20 +19,10 @@ interface Props {
 
 const props = defineProps<Props>()
 
-const roleColors: Record<string, string> = {
-  'Pembina': 'var(--color-navy-700)',
-  'Pelatih': 'var(--color-olive-600)',
-  'Ketua': 'var(--color-rust-500)',
-  'Wakil': 'var(--color-rust-400)',
-  'Sekretaris': 'var(--color-brown-500)',
-  'Bendahara': 'var(--color-brown-600)'
-}
-
 const { mouseX, mouseY, resetMouse } = useMouseParallax()
 
-const pembina = computed(() => props.members.find(m => m.role === 'Pembina'))
-const pelatih = computed(() => props.members.find(m => m.role === 'Pelatih'))
-const otherMembers = computed(() => props.members.filter(m => m.role !== 'Pembina' && m.role !== 'Pelatih'))
+const pembinas = computed(() => props.members.filter(m => m.role === 'Pembina'))
+const pelatihs = computed(() => props.members.filter(m => m.role === 'Pelatih'))
 
 const interactiveStyle = computed(() => {
   const rotateX = -mouseY.value * 2
@@ -71,44 +61,63 @@ const interactiveStyle = computed(() => {
         </div>
       </div>
 
-      <div class="space-y-12 transition-transform duration-300" :style="interactiveStyle">
-        
-        <!-- Top row: Pembina & Pelatih -->
-        <div class="grid md:grid-cols-2 gap-8">
-          <div v-if="pembina" class="retro-card p-6 flex items-center gap-6 group hover:shadow-xl transition-shadow bg-white">
-            <div class="photo-frame flex-shrink-0 w-28">
+      <div class="space-y-10 transition-transform duration-300" :style="interactiveStyle">
+
+        <!-- Pembina & Pelatih row -->
+        <div
+          v-if="pembinas.length > 0 || pelatihs.length > 0"
+          class="grid gap-6"
+          :class="[
+            (pembinas.length + pelatihs.length) === 1 ? 'grid-cols-1 max-w-sm' :
+            (pembinas.length + pelatihs.length) <= 2 ? 'sm:grid-cols-2 max-w-2xl mx-auto' :
+            (pembinas.length + pelatihs.length) <= 3 ? 'sm:grid-cols-2 lg:grid-cols-3' :
+            'sm:grid-cols-2 lg:grid-cols-4'
+          ]"
+        >
+          <!-- All Pembina -->
+          <div
+            v-for="(p, i) in pembinas"
+            :key="`pembina-${i}`"
+            class="retro-card p-6 flex items-center gap-5 group hover:shadow-xl transition-shadow bg-white"
+          >
+            <div class="photo-frame flex-shrink-0 w-24">
               <div class="aspect-[3/4] bg-cream-200 overflow-hidden">
-                <img v-if="pembina.photo" :src="pembina.photo" :alt="pembina.name" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <img v-if="p.photo" :src="p.photo" :alt="p.name" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 <div v-else class="w-full h-full flex items-center justify-center text-brown-300">
                   <UIcon name="i-lucide-user" class="w-10 h-10" />
                 </div>
               </div>
             </div>
             <div>
-              <span class="ribbon text-xs mb-2" :style="{ '--ribbon-bg': roleColors['Pembina'], '--ribbon-text': 'var(--color-cream-50)' }">PEMBINA</span>
-              <h4 class="font-serif text-lg text-navy-800 font-medium leading-tight mt-1">{{ pembina.name }}</h4>
+              <span class="ribbon text-xs mb-2" style="--ribbon-bg: var(--color-navy-700); --ribbon-text: var(--color-cream-50);">PEMBINA</span>
+              <h4 class="font-serif text-base text-navy-800 font-medium leading-tight mt-1">{{ p.name }}</h4>
             </div>
           </div>
-          
-          <div v-if="pelatih" class="retro-card p-6 flex items-center gap-6 group hover:shadow-xl transition-shadow bg-white">
-            <div class="photo-frame flex-shrink-0 w-28">
+
+          <!-- All Pelatih -->
+          <div
+            v-for="(p, i) in pelatihs"
+            :key="`pelatih-${i}`"
+            class="retro-card p-6 flex items-center gap-5 group hover:shadow-xl transition-shadow bg-white"
+          >
+            <div class="photo-frame flex-shrink-0 w-24">
               <div class="aspect-[3/4] bg-cream-200 overflow-hidden">
-                <img v-if="pelatih.photo" :src="pelatih.photo" :alt="pelatih.name" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                <img v-if="p.photo" :src="p.photo" :alt="p.name" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                 <div v-else class="w-full h-full flex items-center justify-center text-brown-300">
                   <UIcon name="i-lucide-user" class="w-10 h-10" />
                 </div>
               </div>
             </div>
             <div>
-              <span class="ribbon text-xs mb-2" :style="{ '--ribbon-bg': roleColors['Pelatih'], '--ribbon-text': 'var(--color-cream-50)' }">PELATIH</span>
-              <h4 class="font-serif text-lg text-navy-800 font-medium leading-tight mt-1">{{ pelatih.name }}</h4>
+              <span class="ribbon text-xs mb-2" style="--ribbon-bg: var(--color-olive-600); --ribbon-text: var(--color-cream-50);">PELATIH</span>
+              <h4 class="font-serif text-base text-navy-800 font-medium leading-tight mt-1">{{ p.name }}</h4>
             </div>
           </div>
         </div>
 
-        <!-- Landscape Group Photos -->
-        <div v-if="groupPhotos && groupPhotos.length > 0" class="grid md:grid-cols-2 gap-8">
-          <div v-for="(photo, idx) in groupPhotos.slice(0, 2)" :key="idx" class="retro-card p-2 bg-white hover:shadow-xl transition-shadow group">
+        <!-- Landscape Group Photos (3) -->
+        <div v-if="groupPhotos && groupPhotos.length > 0" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div v-for="(photo, idx) in groupPhotos.slice(0, 3)" :key="idx" class="retro-card p-2 bg-white hover:shadow-xl transition-shadow group">
             <div class="aspect-[16/9] bg-cream-200 overflow-hidden relative rounded-sm border border-brown-100">
               <img v-if="photo" :src="photo" alt="Foto Bersama Ekskul" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
               <div v-else class="w-full h-full flex items-center justify-center text-brown-300">

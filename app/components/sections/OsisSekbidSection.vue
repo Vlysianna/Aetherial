@@ -61,9 +61,9 @@ const interactiveCardStyle = computed(() => {
       </div>
 
       <!-- Landscape Group Photos -->
-      <div class="grid md:grid-cols-2 gap-10" :style="interactiveCardStyle">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" :style="interactiveCardStyle">
         <div 
-          v-for="idx in 2" 
+          v-for="idx in 3" 
           :key="idx" 
           class="retro-card p-3 bg-white hover:shadow-xl transition-shadow group" 
         >
@@ -81,7 +81,7 @@ const interactiveCardStyle = computed(() => {
             
             <div class="absolute inset-0 bg-gradient-to-t from-navy-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </div>
-          <div class="mt-4 flex justify-between items-center px-2">
+          <div class="mt-3 flex justify-between items-center px-1">
             <p class="text-sm text-brown-600 font-serif italic">Momen Sekbid {{ sekbidNumber }}</p>
             <span class="text-xs text-brown-400 font-display tracking-widest">0{{ idx }}</span>
           </div>
