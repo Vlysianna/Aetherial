@@ -10,7 +10,7 @@ const deptStyles = {
     iconBg: 'bg-rust-100',
     iconText: 'text-rust-600',
     accent: 'text-rust-600',
-    glow: 'from-rust-200/40'
+    glow: 'bg-rust-200/40'
   },
   navy: {
     ribbonBg: 'var(--color-navy-700)',
@@ -18,7 +18,7 @@ const deptStyles = {
     iconBg: 'bg-navy-100',
     iconText: 'text-navy-700',
     accent: 'text-navy-700',
-    glow: 'from-navy-200/35'
+    glow: 'bg-navy-200/35'
   },
   olive: {
     ribbonBg: 'var(--color-olive-600)',
@@ -26,7 +26,7 @@ const deptStyles = {
     iconBg: 'bg-olive-100',
     iconText: 'text-olive-700',
     accent: 'text-olive-700',
-    glow: 'from-olive-200/40'
+    glow: 'bg-olive-200/40'
   },
   brown: {
     ribbonBg: 'var(--color-brown-600)',
@@ -34,7 +34,7 @@ const deptStyles = {
     iconBg: 'bg-brown-100',
     iconText: 'text-brown-600',
     accent: 'text-brown-600',
-    glow: 'from-brown-200/45'
+    glow: 'bg-brown-200/45'
   }
 } as const
 
@@ -102,7 +102,7 @@ const departments = [
             >
               <div class="retro-card p-6 h-full hover-lift relative overflow-hidden">
                 <div
-                  class="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br to-transparent opacity-60 blur-2xl"
+                  class="absolute -top-10 -right-10 w-32 h-32 opacity-60 blur-2xl"
                   :class="dept.style.glow"
                 />
 

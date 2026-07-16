@@ -93,14 +93,15 @@
 /* Retro card style */
 .retro-card {
   background: var(--color-cream-50);
-  border: 2px solid var(--color-brown-200);
-  box-shadow: 4px 4px 0 var(--color-brown-300);
-  transition: all 0.2s ease;
+  border: 1px solid var(--color-brown-200);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
 }
 
 .retro-card:hover {
-  box-shadow: 6px 6px 0 var(--color-brown-400);
-  transform: translate(-2px, -2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
 }
 
 /* Photo frame style */
@@ -108,21 +109,13 @@
   padding: 8px;
   background: white;
   border: 1px solid var(--color-brown-200);
-  box-shadow: 
-    inset 0 0 0 1px var(--color-cream-200),
-    3px 3px 0 var(--color-brown-200);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 /* Retro divider */
 .retro-divider {
-  height: 3px;
-  background: repeating-linear-gradient(
-    90deg,
-    var(--color-rust-400) 0px,
-    var(--color-rust-400) 10px,
-    transparent 10px,
-    transparent 15px
-  );
+  border-bottom: 2px dashed var(--color-rust-400);
 }
 
 /* Typography styles */
@@ -160,20 +153,17 @@
 /* Paper stack effect */
 .paper-stack {
   position: relative;
-  box-shadow: 6px 6px 0 var(--color-cream-200), 12px 12px 0 var(--color-brown-200);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
 /* Ticket style */
 .retro-ticket {
   position: relative;
   background: var(--color-cream-50);
-  border: 2px solid var(--color-brown-300);
-  box-shadow: 4px 4px 0 var(--color-brown-300);
-  background-image:
-    radial-gradient(circle at 0 25%, transparent 8px, var(--color-cream-50) 9px),
-    radial-gradient(circle at 100% 25%, transparent 8px, var(--color-cream-50) 9px),
-    radial-gradient(circle at 0 75%, transparent 8px, var(--color-cream-50) 9px),
-    radial-gradient(circle at 100% 75%, transparent 8px, var(--color-cream-50) 9px);
+  border: 1px solid var(--color-brown-200);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   z-index: 0;
 }
 
@@ -191,7 +181,7 @@
   padding: 0.35rem 0.9rem;
   background: var(--ribbon-bg);
   color: var(--ribbon-text);
-  clip-path: polygon(0 0, 92% 0, 100% 50%, 92% 100%, 0 100%, 8% 50%);
+  border-radius: 6px;
   font-family: 'Bebas Neue', sans-serif;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -202,8 +192,7 @@
   display: inline-block;
   padding: 0.35rem 0.75rem;
   background: var(--color-olive-300);
-  border: 2px solid var(--color-navy-800);
-  box-shadow: 3px 3px 0 var(--color-navy-800);
+  border-radius: 8px;
   transform: rotate(-2deg);
   font-family: 'Bebas Neue', sans-serif;
   letter-spacing: 0.12em;
@@ -213,34 +202,22 @@
 /* Lined note background */
 .note-card {
   background-color: var(--color-cream-50);
-  background-image: linear-gradient(var(--color-cream-200) 1px, transparent 1px);
-  background-size: 100% 26px;
+  border-radius: 12px;
 }
 
 /* Retro grid background */
 .bg-retro-grid {
   background-color: var(--color-cream-50);
-  background-image:
-    linear-gradient(var(--color-cream-200) 1px, transparent 1px),
-    linear-gradient(90deg, var(--color-cream-200) 1px, transparent 1px);
-  background-size: 24px 24px;
 }
 
 /* Sunset background */
 .bg-sunset {
-  background:
-    radial-gradient(900px circle at 15% 10%, var(--color-rust-700) 0%, transparent 55%),
-    radial-gradient(700px circle at 85% 20%, var(--color-olive-700) 0%, transparent 60%),
-    var(--color-navy-900);
+  background-color: var(--color-navy-900);
 }
 
 /* Section backgrounds */
 .bg-paper {
   background-color: var(--color-cream-50);
-  background-image: 
-    linear-gradient(90deg, transparent 79px, var(--color-cream-200) 79px, var(--color-cream-200) 81px, transparent 81px),
-    linear-gradient(var(--color-cream-100) 1px, transparent 1px);
-  background-size: 100% 24px;
 }
 
 .bg-retro-warm {
@@ -375,10 +352,7 @@ html {
 
 /* Gradient text effect */
 .gradient-text {
-  background: linear-gradient(135deg, var(--color-rust-500), var(--color-olive-600));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--color-rust-500);
 }
 
 /* Glass morphism effect */
@@ -417,26 +391,6 @@ html {
 
 /* Border animations */
 .border-animate {
-  position: relative;
-  overflow: hidden;
-}
-
-.border-animate::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--color-rust-500), transparent);
-  animation: borderSlide 3s linear infinite;
-}
-
-@keyframes borderSlide {
-  0% {
-    left: -100%;
-  }
-  100% {
-    left: 100%;
-  }
+  border: 1px solid var(--color-rust-400);
+  border-radius: 8px;
 }

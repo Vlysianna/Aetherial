@@ -93,9 +93,10 @@ import { osisBPH, sekbidData, ekskulData } from '~/data/yearbook-data'
         © {{ new Date().getFullYear() }} BUKU TAHUNAN SEKOLAH
       </p>
       <p class="font-serif text-cream-400 text-xs mt-2 italic">
-        Made with ♥ by Yearbook Team
+        Dibuat dengan cinta oleh Tim Buku Tahunan
       </p>
     </footer>
   </div>
 </template>
+
 
