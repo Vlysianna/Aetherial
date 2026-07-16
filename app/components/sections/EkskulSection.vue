@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { useMouseParallax } from '~/composables/useMouseParallax'
+import { computed } from 'vue'
+
 interface EkskulMember {
   name: string
   photo: string
@@ -24,10 +27,29 @@ const roleColors: Record<string, string> = {
   'Sekretaris': 'var(--color-brown-500)',
   'Bendahara': 'var(--color-brown-600)'
 }
+
+const { mouseX, mouseY, resetMouse } = useMouseParallax()
+
+const interactiveCoverStyle = computed(() => {
+  const rotateX = -mouseY.value * 5
+  const rotateY = mouseX.value * 5
+  return {
+    transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`,
+    transition: 'transform 0.1s ease-out'
+  }
+})
 </script>
 
 <template>
-  <section :id="`ekskul-${ekskulName.toLowerCase().replace(/\s+/g, '-')}`" class="py-20 bg-cream-50 retro-texture">
+  <section 
+    :id="`ekskul-${ekskulName.toLowerCase().replace(/\s+/g, '-')}`" 
+    class="py-20 bg-cream-50 retro-texture relative overflow-hidden perspective-1000"
+    @mouseleave="resetMouse"
+  >
+    <div 
+      class="absolute inset-0 bg-retro-grid opacity-10 transition-transform duration-700 pointer-events-none scale-110"
+      :style="{ transform: `translate(${mouseX * -20}px, ${mouseY * -20}px)` }"
+    />
     <div class="max-w-6xl mx-auto px-6">
       <!-- Section header -->
       <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
@@ -45,7 +67,7 @@ const roleColors: Record<string, string> = {
         </div>
       </div>
 
-      <div class="retro-card overflow-hidden">
+      <div class="retro-card overflow-hidden transition-transform duration-300 shadow-xl" :style="interactiveCoverStyle">
         <!-- Cover photo if available -->
         <div v-if="coverPhoto" class="relative h-56 md:h-72">
           <img
@@ -117,3 +139,9 @@ const roleColors: Record<string, string> = {
     </div>
   </section>
 </template>
+
+<style scoped>
+.perspective-1000 {
+  perspective: 1000px;
+}
+</style>

@@ -10,13 +10,37 @@ withDefaults(defineProps<Props>(), {
   principalPhoto: '/images/principal.jpg',
   message: 'Selamat datang di Buku Tahunan Sekolah kami. Tiga tahun perjalanan telah kita lalui bersama, penuh dengan pembelajaran, persahabatan, dan kenangan yang tak terlupakan. Buku ini adalah saksi bisu dari setiap momen berharga yang telah kita ukir bersama. Semoga kenangan indah ini akan selalu menjadi bekal dalam perjalanan kalian selanjutnya.'
 })
+
+import { useMouseParallax } from '~/composables/useMouseParallax'
+import { computed } from 'vue'
+
+const { mouseX, mouseY, resetMouse } = useMouseParallax()
+
+// Interactive 3D Card Style for Polaroid
+const interactivePhotoStyle = computed(() => {
+  const rotateX = -mouseY.value * 15
+  const rotateY = mouseX.value * 15
+  return {
+    transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`,
+    transition: 'transform 0.1s ease-out'
+  }
+})
 </script>
 
 <template>
-  <section class="py-24 bg-cream-100 retro-texture relative overflow-hidden">
+  <section 
+    class="py-24 bg-cream-100 retro-texture relative overflow-hidden perspective-1000"
+    @mouseleave="resetMouse"
+  >
     <div class="absolute inset-0 bg-paper opacity-60" />
-    <div class="absolute top-10 right-10 w-48 h-48 bg-rust-200/20 rounded-full blur-3xl" />
-    <div class="absolute bottom-20 left-10 w-48 h-48 bg-olive-200/20 rounded-full blur-3xl" />
+    <div 
+      class="absolute top-10 right-10 w-48 h-48 bg-rust-200/20 rounded-full blur-3xl transition-transform duration-700" 
+      :style="{ transform: `translate(${mouseX * -30}px, ${mouseY * -30}px)` }"
+    />
+    <div 
+      class="absolute bottom-20 left-10 w-48 h-48 bg-olive-200/20 rounded-full blur-3xl transition-transform duration-700" 
+      :style="{ transform: `translate(${mouseX * 40}px, ${mouseY * 40}px)` }"
+    />
 
     <div class="max-w-6xl mx-auto px-6 relative z-10">
       <!-- Section header -->
@@ -41,9 +65,9 @@ withDefaults(defineProps<Props>(), {
         <!-- Principal photo -->
         <div class="flex justify-center animate-fade-in-left stagger-2">
           <div class="relative paper-stack retro-card p-5 md:p-6 bg-cream-50">
-            <div class="relative">
-              <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-cream-200/80 border border-brown-200 rotate-2" />
-              <div class="polaroid">
+            <div class="relative transition-transform duration-300" :style="interactivePhotoStyle">
+              <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-24 h-6 bg-cream-200/80 border border-brown-200 rotate-2 z-10 shadow-sm" />
+              <div class="polaroid" style="--rotation: -2deg;">
                 <div class="aspect-[3/4] w-64 md:w-80 bg-cream-200 overflow-hidden relative">
                   <img
                     :src="principalPhoto"
@@ -95,3 +119,9 @@ withDefaults(defineProps<Props>(), {
     </div>
   </section>
 </template>
+
+<style scoped>
+.perspective-1000 {
+  perspective: 1000px;
+}
+</style>

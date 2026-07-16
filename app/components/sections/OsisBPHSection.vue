@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { useMouseParallax } from '~/composables/useMouseParallax'
+import { computed } from 'vue'
+
 interface BPHMember {
   name: string
   photo: string
@@ -14,11 +17,29 @@ interface Props {
 defineProps<Props>()
 
 const roleOrder = ['Ketua', 'Wakil Ketua', 'Sekretaris 1', 'Sekretaris 2', 'Bendahara 1', 'Bendahara 2']
+
+const { mouseX, mouseY, resetMouse } = useMouseParallax()
+
+const interactiveCardStyle = computed(() => {
+  const rotateX = -mouseY.value * 10
+  const rotateY = mouseX.value * 10
+  return {
+    transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
+    transition: 'transform 0.1s ease-out'
+  }
+})
 </script>
 
 <template>
-  <section id="osis" class="py-24 bg-navy-50 retro-texture relative overflow-hidden">
-    <div class="absolute inset-0 bg-retro-grid opacity-20" />
+  <section 
+    id="osis" 
+    class="py-24 bg-navy-50 retro-texture relative overflow-hidden perspective-1000"
+    @mouseleave="resetMouse"
+  >
+    <div 
+      class="absolute inset-0 bg-retro-grid opacity-20 transition-transform duration-700 pointer-events-none scale-110" 
+      :style="{ transform: `translate(${mouseX * -20}px, ${mouseY * -20}px)` }"
+    />
     <div class="max-w-6xl mx-auto px-6 relative z-10">
       <div class="grid lg:grid-cols-[0.35fr_0.65fr] gap-10 items-start">
         <!-- Section header -->
@@ -42,9 +63,10 @@ const roleOrder = ['Ketua', 'Wakil Ketua', 'Sekretaris 1', 'Sekretaris 2', 'Bend
           <div
             v-for="(member, index) in members"
             :key="index"
-            class="flex justify-center"
+            class="flex justify-center transition-transform duration-300 hover:z-10"
+            :style="interactiveCardStyle"
           >
-            <div class="paper-stack retro-card p-6 max-w-xs w-full text-center">
+            <div class="paper-stack retro-card p-6 max-w-xs w-full text-center hover:shadow-2xl transition-shadow">
               <div class="photo-frame mx-auto w-48">
                 <div class="aspect-[3/4] bg-cream-200 overflow-hidden">
                   <img
@@ -95,3 +117,9 @@ const roleOrder = ['Ketua', 'Wakil Ketua', 'Sekretaris 1', 'Sekretaris 2', 'Bend
     </div>
   </section>
 </template>
+
+<style scoped>
+.perspective-1000 {
+  perspective: 1000px;
+}
+</style>

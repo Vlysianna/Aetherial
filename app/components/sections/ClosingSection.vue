@@ -1,12 +1,35 @@
 <script setup lang="ts">
+import { useMouseParallax } from '~/composables/useMouseParallax'
+import { computed } from 'vue'
+
 const currentYear = new Date().getFullYear()
+
+const { mouseX, mouseY, resetMouse } = useMouseParallax()
+
+const interactiveCardStyle = computed(() => {
+  const rotateX = -mouseY.value * 5
+  const rotateY = mouseX.value * 5
+  return {
+    transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`,
+    transition: 'transform 0.1s ease-out'
+  }
+})
 </script>
 
 <template>
-  <section class="py-24 bg-sunset retro-texture relative overflow-hidden">
-    <div class="absolute inset-0 bg-retro-grid opacity-10" />
-    <div class="max-w-5xl mx-auto px-6 relative z-10">
-      <div class="paper-stack bg-cream-50 border-2 border-brown-300 p-10 md:p-14 text-center">
+  <section 
+    class="py-24 bg-sunset retro-texture relative overflow-hidden perspective-1000"
+    @mouseleave="resetMouse"
+  >
+    <div 
+      class="absolute inset-0 bg-retro-grid opacity-10 transition-transform duration-700 pointer-events-none scale-110" 
+      :style="{ transform: `translate(${mouseX * -20}px, ${mouseY * -20}px)` }"
+    />
+    <div class="max-w-5xl mx-auto px-6 relative z-10 flex justify-center">
+      <div 
+        class="paper-stack bg-cream-50 border-2 border-brown-300 p-10 md:p-14 text-center transition-transform duration-300 hover:shadow-2xl max-w-3xl w-full"
+        :style="interactiveCardStyle"
+      >
         <div class="flex justify-center mb-8">
           <span class="sticker text-navy-900">Terima Kasih</span>
         </div>
@@ -41,8 +64,8 @@ const currentYear = new Date().getFullYear()
           </p>
         </div>
 
-        <div class="mt-12">
-          <span class="stamp text-rust-600 text-2xl border-rust-600">
+        <div class="mt-12 transition-transform duration-300 hover:scale-110 inline-block cursor-pointer">
+          <span class="stamp text-rust-600 text-2xl border-rust-600 hover:bg-rust-50 transition-colors">
             {{ currentYear }}
           </span>
         </div>
@@ -59,3 +82,9 @@ const currentYear = new Date().getFullYear()
     </div>
   </section>
 </template>
+
+<style scoped>
+.perspective-1000 {
+  perspective: 1000px;
+}
+</style>

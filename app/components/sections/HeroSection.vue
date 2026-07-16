@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed } from 'vue'
+import { useMouseParallax } from '~/composables/useMouseParallax'
 
 const currentYear = new Date().getFullYear()
 const scrollY = ref(0)
@@ -7,25 +8,11 @@ const isVisible = ref(false)
 const isHoveringCard = ref(false)
 
 // Mouse tracking for interactivity
-const mouseX = ref(0)
-const mouseY = ref(0)
+const { mouseX, mouseY, resetMouse } = useMouseParallax()
 const heroRef = ref<HTMLElement | null>(null)
 
 const handleScroll = () => {
   scrollY.value = window.scrollY
-}
-
-const handleMouseMove = (e: MouseEvent) => {
-  if (typeof window === 'undefined') return
-  
-  // Calculate mouse position relative to window center, normalized from -1 to 1
-  mouseX.value = (e.clientX / window.innerWidth) * 2 - 1
-  mouseY.value = (e.clientY / window.innerHeight) * 2 - 1
-}
-
-const resetMouse = () => {
-  mouseX.value = 0
-  mouseY.value = 0
 }
 
 // Interactive 3D Card Style
@@ -48,7 +35,6 @@ const interactiveCardStyle = computed(() => {
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
-  window.addEventListener('mousemove', handleMouseMove)
   
   setTimeout(() => {
     isVisible.value = true
@@ -57,7 +43,6 @@ onMounted(() => {
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
-  window.removeEventListener('mousemove', handleMouseMove)
 })
 </script>
 

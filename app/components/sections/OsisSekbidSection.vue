@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { useMouseParallax } from '~/composables/useMouseParallax'
+import { computed } from 'vue'
+
 interface SekbidMember {
   name: string
   formalPhoto: string
@@ -25,15 +28,31 @@ const sekbidDescriptions: Record<number, string> = {
   5: 'Berorganisasi, Pendidikan Politik dan Kepemimpinan',
   6: 'Keterampilan dan Kewirausahaan'
 }
+
+const { mouseX, mouseY, resetMouse } = useMouseParallax()
+
+const interactiveCardStyle = computed(() => {
+  const rotateX = -mouseY.value * 5
+  const rotateY = mouseX.value * 5
+  return {
+    transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
+    transition: 'transform 0.1s ease-out'
+  }
+})
 </script>
 
 <template>
   <section
     :id="`sekbid-${sekbidNumber}`"
-    class="py-20 retro-texture relative overflow-hidden"
+    class="py-20 retro-texture relative overflow-hidden perspective-1000"
     :class="sekbidNumber % 2 === 0 ? 'bg-cream-50' : 'bg-navy-50'"
+    @mouseleave="resetMouse"
   >
-    <div class="absolute inset-0 bg-retro-grid" :class="sekbidNumber % 2 === 0 ? 'opacity-20' : 'opacity-10'" />
+    <div 
+      class="absolute inset-0 bg-retro-grid transition-transform duration-700 pointer-events-none scale-110" 
+      :class="sekbidNumber % 2 === 0 ? 'opacity-20' : 'opacity-10'"
+      :style="{ transform: `translate(${mouseX * -20}px, ${mouseY * -20}px)` }"
+    />
     <div class="max-w-6xl mx-auto px-6 relative z-10">
       <!-- Section header -->
       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-12">
@@ -56,7 +75,8 @@ const sekbidDescriptions: Record<number, string> = {
         <div
           v-for="(member, index) in members"
           :key="index"
-          class="paper-stack retro-card p-6 md:p-8"
+          class="paper-stack retro-card p-6 md:p-8 group transition-transform duration-300 shadow-lg hover:shadow-2xl"
+          :style="interactiveCardStyle"
         >
           <div class="grid lg:grid-cols-[0.35fr_0.65fr] gap-6 items-center">
             <!-- Member info -->
@@ -142,3 +162,9 @@ const sekbidDescriptions: Record<number, string> = {
     </div>
   </section>
 </template>
+
+<style scoped>
+.perspective-1000 {
+  perspective: 1000px;
+}
+</style>

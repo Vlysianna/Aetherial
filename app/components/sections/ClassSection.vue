@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { classesData } from '~/data/yearbook-data'
+import { useMouseParallax } from '~/composables/useMouseParallax'
+
+const { mouseX, mouseY, resetMouse } = useMouseParallax()
 
 const currentYear = new Date().getFullYear()
 
@@ -49,8 +52,11 @@ const departments = [
 </script>
 
 <template>
-  <section id="classes" class="py-24 bg-cream-50 retro-texture relative overflow-hidden">
-    <div class="absolute inset-0 bg-retro-grid opacity-25" />
+  <section id="classes" class="py-24 bg-cream-50 retro-texture relative overflow-hidden perspective-1000" @mouseleave="resetMouse">
+    <div 
+      class="absolute inset-0 bg-retro-grid opacity-25 transition-transform duration-700 pointer-events-none scale-110"
+      :style="{ transform: `translate(${mouseX * -20}px, ${mouseY * -20}px)` }"
+    />
     <div class="max-w-7xl mx-auto px-6 relative z-10">
       <!-- Section header -->
       <div class="text-center mb-16">
@@ -174,3 +180,9 @@ const departments = [
     </div>
   </section>
 </template>
+
+<style scoped>
+.perspective-1000 {
+  perspective: 1000px;
+}
+</style>
