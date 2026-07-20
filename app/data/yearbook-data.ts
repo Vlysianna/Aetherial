@@ -439,7 +439,7 @@ export const ekskulData: import('~/types/yearbook').EkskulData[] = [
     groupPhotos: buildEkskulPhotos('Pramuka'),
     members: [
       makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Pramuka/Pembina%20-%20Yanti%20Sabartina%20S.Pd.png', 'Pembina'),
-      makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Pramuka/Pembina%20-%20Yanti%20Sabartina%20S.Pd.png', 'Pembina'),
+      makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Pramuka/Pembina%20-%20Kartina%20ST.Par.png', 'Pembina'),
       makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Pramuka/Pembina%20-%20Hadi%20Santoso%20S.Pd.png', 'Pembina'),
       makeMember('https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/Ekskul/Pramuka/Pembina%20-%20Retno%20Widowati%20S.Pd.png', 'Pembina')
     ]
