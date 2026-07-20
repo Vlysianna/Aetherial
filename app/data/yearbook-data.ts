@@ -259,11 +259,12 @@ const bphUrls = [
   'https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/OSIS/BPH/1.%20Muhammad%20Rafie%20Faeza%20Arrumi%20-%20Ketua%20Osis.JPG',
   'https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/OSIS/BPH/2.%20Kirana%20Amanda%20Putri%20Firmansyah%20-%20Wakil%20Ketua%20Osis.JPG',
   'https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/OSIS/BPH/3.%20Adelia%20Tri%20Ramadhani%20-%20Sekretaris%201.JPG',
+  'https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/OSIS/BPH/4.%20Jasmine%20Natalie%20Putri%20Montolalu%20-%20Sekretaris%202.JPG',
   'https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/OSIS/BPH/5.%20Amara%20Maulida%20Syaharani%20-%20Bendahara%201.JPG',
   'https://xvjjgubskwigdzdugoxg.supabase.co/storage/v1/object/public/aetherial/Siswa/OSIS/BPH/6.%20Caesal%20Pandu%20Rifolia%20-%20Bendahara%202.JPG'
 ]
 
-const defaultBphRoles: BPHMember['role'][] = ['Ketua', 'Wakil Ketua', 'Sekretaris', 'Bendahara 1', 'Bendahara 2']
+const defaultBphRoles: BPHMember['role'][] = ['Ketua', 'Wakil Ketua', 'Sekretaris 1', 'Sekretaris 2', 'Bendahara 1', 'Bendahara 2']
 
 export const osisBPH: BPHMember[] = bphUrls.map((url, index) => {
   let name = `Anggota ${index + 1}`
