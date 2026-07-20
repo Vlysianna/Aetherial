@@ -34,7 +34,7 @@ const generateStudents = (classCode: string, count: number = 36) => {
 const rawClassesData: ClassData[] = [
   {
     classCode: 'ULW',
-    className: 'Unggulan Wirausaha',
+    className: 'Usaha Layanan Wisata',
     students: generateStudents('ULW', 36),
     teacher: {
       name: 'Nurlatifah Ismail,S.pd,M.par.',
