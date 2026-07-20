@@ -1,13 +1,23 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
+import { useRouter } from 'vue-router'
 
 const isLoading = ref(true)
 const progress = ref(0)
 const isHiding = ref(false)
+let interval: any = null
+let fallbackTimer: any = null
 
-onMounted(() => {
-  // Simulate progress
-  const interval = setInterval(() => {
+const startLoading = () => {
+  isLoading.value = true
+  isHiding.value = false
+  progress.value = 0
+  document.body.style.overflow = 'hidden'
+  
+  if (interval) clearInterval(interval)
+  if (fallbackTimer) clearTimeout(fallbackTimer)
+
+  interval = setInterval(() => {
     if (progress.value < 90) {
       // Random increment between 2 and 15
       progress.value += Math.floor(Math.random() * 12) + 2
@@ -15,44 +25,58 @@ onMounted(() => {
     }
   }, 150)
 
-  // When window is fully loaded (all images, etc.)
-  const completeLoading = () => {
-    clearInterval(interval)
-    progress.value = 100
-    
-    // Wait for progress bar animation to complete
+  fallbackTimer = setTimeout(() => {
+    if (isLoading.value) completeLoading()
+  }, 10000)
+}
+
+const completeLoading = () => {
+  if (interval) clearInterval(interval)
+  if (fallbackTimer) clearTimeout(fallbackTimer)
+  
+  progress.value = 100
+  
+  setTimeout(() => {
+    isHiding.value = true
     setTimeout(() => {
-      isHiding.value = true
-      
-      // Wait for fade out animation
-      setTimeout(() => {
-        isLoading.value = false
-        document.body.style.overflow = ''
-      }, 800) // matches fade-out duration
-    }, 400)
-  }
+      isLoading.value = false
+      document.body.style.overflow = ''
+    }, 800)
+  }, 400)
+}
 
-  // Prevent scrolling while loading
-  document.body.style.overflow = 'hidden'
-
+onMounted(() => {
+  // Initial page load
+  startLoading()
+  
   if (document.readyState === 'complete') {
     completeLoading()
   } else {
     window.addEventListener('load', completeLoading)
   }
-  
-  // Fallback just in case load event takes too long or never fires
-  // 10 seconds max loading screen
-  const fallbackTimer = setTimeout(() => {
-    if (isLoading.value) completeLoading()
-  }, 10000)
+})
 
-  onUnmounted(() => {
-    clearInterval(interval)
-    clearTimeout(fallbackTimer)
-    window.removeEventListener('load', completeLoading)
-    document.body.style.overflow = ''
-  })
+// Trigger on route changes
+const router = useRouter()
+router.beforeEach((to, from, next) => {
+  if (to.path !== from.path) {
+    startLoading()
+  }
+  next()
+})
+
+router.afterEach(() => {
+  // Small delay to allow DOM to render and images to start loading
+  setTimeout(() => {
+    completeLoading()
+  }, 800)
+})
+
+onUnmounted(() => {
+  if (interval) clearInterval(interval)
+  if (fallbackTimer) clearTimeout(fallbackTimer)
+  window.removeEventListener('load', completeLoading)
+  document.body.style.overflow = ''
 })
 </script>
 

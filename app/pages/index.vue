@@ -15,8 +15,8 @@ import { osisBPH, sekbidData, ekskulData } from '~/data/yearbook-data'
     <!-- Welcome Section -->
     <div id="welcome">
       <SectionsWelcomeSection
-        principal-name="Drs. H. Nama Kepala Sekolah, M.Pd."
-        principal-photo=""
+        principal-name="Isfariani, S.Pd."
+        principal-photo="/kepalasekolah.jpeg"
         message="Selamat datang di Buku Tahunan Sekolah kami. Tiga tahun perjalanan telah kita lalui bersama, penuh dengan pembelajaran, persahabatan, dan kenangan yang tak terlupakan. Buku ini adalah saksi bisu dari setiap momen berharga yang telah kita ukir bersama. Semoga kenangan indah ini akan selalu menjadi bekal dalam perjalanan kalian selanjutnya. Sukses selalu untuk masa depan kalian!"
       />
     </div>
