@@ -190,9 +190,9 @@ const rawClassesData: ClassData[] = [
     className: 'Perhotelan 1',
     students: generateStudents('PH 1', 36),
     teacher: {
-      name: 'Drs. Surya Wijaya, M.Par.',
+      name: 'Leny Marlina, S.Pd',
       photo: '',
-      subject: 'Front Office Operations'
+      subject: 'Perhotelan',
     },
     officers: [
       { name: 'Daniel Pratama', photo: '', role: 'Ketua', instagram: 'danielprtm' },
@@ -209,7 +209,7 @@ const rawClassesData: ClassData[] = [
     teacher: {
       name: 'Kartina, ST.Par.',
       photo: '',
-      subject: 'Housekeeping Operations'
+      subject: 'Perhotelan'
     },
     officers: [
       { name: 'Kevin Alexander', photo: '', role: 'Ketua', instagram: 'kevinalex_' },
@@ -224,9 +224,9 @@ const rawClassesData: ClassData[] = [
     className: 'Perhotelan 3',
     students: generateStudents('PH 3', 36),
     teacher: {
-      name: 'Ahmad Fauzi, S.Par.',
+      name: 'Ratri Putri Utami, S.Pd',
       photo: '',
-      subject: 'Event Management'
+      subject: 'Perhotelan'
     },
     officers: [
       { name: 'Raihan Sakti', photo: '', role: 'Ketua', instagram: 'raihansakti' },
